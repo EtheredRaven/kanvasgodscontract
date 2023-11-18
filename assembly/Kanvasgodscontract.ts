@@ -14,13 +14,13 @@ import { kanvasgodscontract } from "./proto/kanvasgodscontract";
 
 import { Constants } from "./Constants";
 
-const TOKENS_SPACE_ID = 0;
-const BALANCES_SPACE_ID = 2;
-const APPROVALS_SPACE_ID = 3;
-const OPERATORS_SPACE_ID = 4;
-const TOKEN_OF_SPACE_ID = 5;
-const SUPPLY_SPACE_ID = 6;
-const CONFIG_SPACE_ID = 7;
+const TOKENS_SPACE_ID = 18;
+const BALANCES_SPACE_ID = 19;
+const APPROVALS_SPACE_ID = 20;
+const OPERATORS_SPACE_ID = 21;
+const TOKEN_OF_SPACE_ID = 22;
+const SUPPLY_SPACE_ID = 23;
+const CONFIG_SPACE_ID = 24;
 
 export class Kanvasgodscontract {
   _contractId: Uint8Array;
@@ -81,7 +81,10 @@ export class Kanvasgodscontract {
       CONFIG_SPACE_ID,
       kanvasgodscontract.config_object.decode,
       kanvasgodscontract.config_object.encode,
-      null
+      () =>
+        new kanvasgodscontract.config_object(Constants.OWNER, [
+          new kanvasgodscontract.royalty_object(0, Constants.ADDRESS_PAY),
+        ])
     );
   }
 
@@ -239,7 +242,7 @@ export class Kanvasgodscontract {
   }
 
   /**
-   * Get the tokens ids of an owner
+   * Get the tokens ids of a specific owner
    * @external
    * @readonly
    */
@@ -499,6 +502,14 @@ export class Kanvasgodscontract {
     );
     tokens_list_from.splice(token_index, 1);
     tokens_list_to.push(token_id);
+    this._tokensOf.put(
+      from,
+      new kanvasgodscontract.tokens_of_result(tokens_list_from)
+    );
+    this._tokensOf.put(
+      to,
+      new kanvasgodscontract.tokens_of_result(tokens_list_to)
+    );
 
     // save new states
     this._tokens.put(token_id, token!);
