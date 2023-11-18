@@ -9,7 +9,7 @@ import {
 import { Kanvasgodscontract } from "../Kanvasgodscontract";
 import { kanvasgodscontract } from "../proto/kanvasgodscontract";
 
-const CONTRACT_ID = Base58.decode("1KJzFZ1Gy7H5WdVPnMKAvppmYx6Lj5m5bs");
+const CONTRACT_ID = Base58.decode("1KANGodsneBDiXyvGT5fYrfDcZpJCjxRQU");
 const MOCK_ACCT1 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqG");
 const MOCK_ACCT2 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqK");
 const CONTRACT_EMPTY = Base58.decode("");

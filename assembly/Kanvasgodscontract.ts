@@ -81,10 +81,7 @@ export class Kanvasgodscontract {
       CONFIG_SPACE_ID,
       kanvasgodscontract.config_object.decode,
       kanvasgodscontract.config_object.encode,
-      () =>
-        new kanvasgodscontract.config_object(Constants.OWNER, [
-          new kanvasgodscontract.royalty_object(0, Constants.ADDRESS_PAY),
-        ])
+      () => new kanvasgodscontract.config_object(Constants.OWNER, [])
     );
   }
 
@@ -174,7 +171,7 @@ export class Kanvasgodscontract {
 
     const royaltiesEvent = new kanvasgodscontract.royalties_event(royalties);
     System.event(
-      "kanvasgodscontract.royalties_event",
+      "collections.royalties_event",
       Protobuf.encode(
         royaltiesEvent,
         kanvasgodscontract.royalties_event.encode
@@ -220,7 +217,7 @@ export class Kanvasgodscontract {
     this._config.put(config);
 
     System.event(
-      "kanvasgodscontract.owner_event",
+      "collections.owner_event",
       Protobuf.encode(ownerEvent, kanvasgodscontract.owner_event.encode),
       impacted
     );
@@ -388,7 +385,7 @@ export class Kanvasgodscontract {
 
       const impacted = [to];
       System.event(
-        "kanvasgodscontract.mint_event",
+        "collections.mint_event",
         Protobuf.encode(mintEvent, kanvasgodscontract.mint_event.encode),
         impacted
       );
@@ -524,7 +521,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [to, from];
     System.event(
-      "kanvasgodscontract.transfer_event",
+      "collections.transfer_event",
       Protobuf.encode(transferEvent, kanvasgodscontract.transfer_event.encode),
       impacted
     );
@@ -593,7 +590,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [to, approver_address];
     System.event(
-      "kanvasgodscontract.token_approval_event",
+      "collections.token_approval_event",
       Protobuf.encode(
         approvalEvent,
         kanvasgodscontract.token_approval_event.encode
@@ -643,7 +640,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [operator_address, approver_address];
     System.event(
-      "kanvasgodscontract.operator_approval_event",
+      "collections.operator_approval_event",
       Protobuf.encode(
         approvalEvent,
         kanvasgodscontract.operator_approval_event.encode
