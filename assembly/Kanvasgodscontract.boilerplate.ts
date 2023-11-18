@@ -1,227 +1,209 @@
 import { System, Protobuf, authority } from "@koinos/sdk-as";
-import { kanvasgodscontract } from "./proto/kanvasgodscontract";
+import { collections } from "./proto/collections";
 
 export class Kanvasgodscontract {
-  name(
-    args: kanvasgodscontract.name_arguments
-  ): kanvasgodscontract.string_object {
+  name(args: collections.name_arguments): collections.string_object {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.string_object();
+    const res = new collections.string_object();
     // res.value = ;
 
     return res;
   }
 
-  uri(
-    args: kanvasgodscontract.uri_arguments
-  ): kanvasgodscontract.string_object {
+  uri(args: collections.uri_arguments): collections.string_object {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.string_object();
+    const res = new collections.string_object();
     // res.value = ;
 
     return res;
   }
 
-  symbol(
-    args: kanvasgodscontract.symbol_arguments
-  ): kanvasgodscontract.string_object {
+  symbol(args: collections.symbol_arguments): collections.string_object {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.string_object();
+    const res = new collections.string_object();
     // res.value = ;
 
     return res;
   }
 
   get_approved(
-    args: kanvasgodscontract.get_approved_arguments
-  ): kanvasgodscontract.address_object {
+    args: collections.get_approved_arguments
+  ): collections.address_object {
     // const token_id = args.token_id;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.address_object();
+    const res = new collections.address_object();
     // res.value = ;
 
     return res;
   }
 
   is_approved_for_all(
-    args: kanvasgodscontract.is_approved_for_all_arguments
-  ): kanvasgodscontract.bool_object {
+    args: collections.is_approved_for_all_arguments
+  ): collections.bool_object {
     // const owner = args.owner;
     // const operator = args.operator;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.bool_object();
+    const res = new collections.bool_object();
     // res.value = ;
 
     return res;
   }
 
   total_supply(
-    args: kanvasgodscontract.total_supply_arguments
-  ): kanvasgodscontract.uint64_object {
+    args: collections.total_supply_arguments
+  ): collections.uint64_object {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.uint64_object();
+    const res = new collections.uint64_object();
     // res.value = ;
 
     return res;
   }
 
   royalties(
-    args: kanvasgodscontract.royalties_arguments
-  ): kanvasgodscontract.royalties_result {
+    args: collections.royalties_arguments
+  ): collections.royalties_result {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.royalties_result();
+    const res = new collections.royalties_result();
     // res.value = ;
 
     return res;
   }
 
   set_royalties(
-    args: kanvasgodscontract.set_royalties_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.set_royalties_arguments
+  ): collections.empty_object {
     // const value = args.value;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
-  owner(
-    args: kanvasgodscontract.owner_arguments
-  ): kanvasgodscontract.address_object {
+  owner(args: collections.owner_arguments): collections.address_object {
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.address_object();
+    const res = new collections.address_object();
     // res.value = ;
 
     return res;
   }
 
   transfer_ownership(
-    args: kanvasgodscontract.transfer_ownership_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.transfer_ownership_arguments
+  ): collections.empty_object {
     // const owner = args.owner;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
   balance_of(
-    args: kanvasgodscontract.balance_of_arguments
-  ): kanvasgodscontract.uint64_object {
+    args: collections.balance_of_arguments
+  ): collections.uint64_object {
     // const owner = args.owner;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.uint64_object();
+    const res = new collections.uint64_object();
     // res.value = ;
 
     return res;
   }
 
   tokens_of(
-    args: kanvasgodscontract.tokens_of_arguments
-  ): kanvasgodscontract.tokens_of_result {
+    args: collections.tokens_of_arguments
+  ): collections.tokens_of_result {
     // const owner = args.owner;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.tokens_of_result();
+    const res = new collections.tokens_of_result();
     // res.token_id = ;
 
     return res;
   }
 
-  owner_of(
-    args: kanvasgodscontract.owner_of_arguments
-  ): kanvasgodscontract.address_object {
+  owner_of(args: collections.owner_of_arguments): collections.address_object {
     // const token_id = args.token_id;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.address_object();
+    const res = new collections.address_object();
     // res.value = ;
 
     return res;
   }
 
-  mint(
-    args: kanvasgodscontract.mint_arguments
-  ): kanvasgodscontract.empty_object {
+  mint(args: collections.mint_arguments): collections.empty_object {
     // const to = args.to;
     // const number_tokens_to_mint = args.number_tokens_to_mint;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
-  burn(
-    args: kanvasgodscontract.burn_arguments
-  ): kanvasgodscontract.empty_object {
+  burn(args: collections.burn_arguments): collections.empty_object {
     // const from = args.from;
     // const token_id = args.token_id;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
-  transfer(
-    args: kanvasgodscontract.transfer_arguments
-  ): kanvasgodscontract.empty_object {
+  transfer(args: collections.transfer_arguments): collections.empty_object {
     // const from = args.from;
     // const to = args.to;
     // const token_id = args.token_id;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
-  approve(
-    args: kanvasgodscontract.approve_arguments
-  ): kanvasgodscontract.empty_object {
+  approve(args: collections.approve_arguments): collections.empty_object {
     // const approver_address = args.approver_address;
     // const to = args.to;
     // const token_id = args.token_id;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }
 
   set_approval_for_all(
-    args: kanvasgodscontract.set_approval_for_all_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.set_approval_for_all_arguments
+  ): collections.empty_object {
     // const approver_address = args.approver_address;
     // const operator_address = args.operator_address;
     // const approved = args.approved;
 
     // YOUR CODE HERE
 
-    const res = new kanvasgodscontract.empty_object();
+    const res = new collections.empty_object();
 
     return res;
   }

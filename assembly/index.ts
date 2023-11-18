@@ -1,6 +1,6 @@
 import { System, Protobuf, authority } from "@koinos/sdk-as";
 import { Kanvasgodscontract as ContractClass } from "./Kanvasgodscontract";
-import { kanvasgodscontract as ProtoNamespace } from "./proto/kanvasgodscontract";
+import { collections as ProtoNamespace } from "./proto/collections";
 
 export function main(): i32 {
   const contractArgs = System.getArguments();

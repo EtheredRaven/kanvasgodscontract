@@ -10,7 +10,7 @@ import {
   StringBytes,
   Base58,
 } from "@koinos/sdk-as";
-import { kanvasgodscontract } from "./proto/kanvasgodscontract";
+import { collections } from "./proto/collections";
 
 import { Constants } from "./Constants";
 
@@ -24,64 +24,64 @@ const CONFIG_SPACE_ID = 24;
 
 export class Kanvasgodscontract {
   _contractId: Uint8Array;
-  _supply!: Storage.Obj<kanvasgodscontract.balance_object>;
-  _tokens!: Storage.Map<string, kanvasgodscontract.token_object>;
-  _balances!: Storage.Map<Uint8Array, kanvasgodscontract.balance_object>;
-  _approvals!: Storage.Map<string, kanvasgodscontract.token_approval_object>;
-  _operators!: Storage.Map<string, kanvasgodscontract.operator_approval_object>;
-  _tokensOf!: Storage.Map<Uint8Array, kanvasgodscontract.tokens_of_result>;
-  _config!: Storage.Obj<kanvasgodscontract.config_object>;
+  _supply!: Storage.Obj<collections.balance_object>;
+  _tokens!: Storage.Map<string, collections.token_object>;
+  _balances!: Storage.Map<Uint8Array, collections.balance_object>;
+  _approvals!: Storage.Map<string, collections.token_approval_object>;
+  _operators!: Storage.Map<string, collections.operator_approval_object>;
+  _tokensOf!: Storage.Map<Uint8Array, collections.tokens_of_result>;
+  _config!: Storage.Obj<collections.config_object>;
 
   constructor() {
     this._contractId = System.getContractId();
     this._supply = new Storage.Obj(
       this._contractId,
       SUPPLY_SPACE_ID,
-      kanvasgodscontract.balance_object.decode,
-      kanvasgodscontract.balance_object.encode,
-      () => new kanvasgodscontract.balance_object(0)
+      collections.balance_object.decode,
+      collections.balance_object.encode,
+      () => new collections.balance_object(0)
     );
     this._tokens = new Storage.Map(
       this._contractId,
       TOKENS_SPACE_ID,
-      kanvasgodscontract.token_object.decode,
-      kanvasgodscontract.token_object.encode,
+      collections.token_object.decode,
+      collections.token_object.encode,
       null
     );
     this._balances = new Storage.Map(
       this._contractId,
       BALANCES_SPACE_ID,
-      kanvasgodscontract.balance_object.decode,
-      kanvasgodscontract.balance_object.encode,
-      () => new kanvasgodscontract.balance_object(0)
+      collections.balance_object.decode,
+      collections.balance_object.encode,
+      () => new collections.balance_object(0)
     );
     this._approvals = new Storage.Map(
       this._contractId,
       APPROVALS_SPACE_ID,
-      kanvasgodscontract.token_approval_object.decode,
-      kanvasgodscontract.token_approval_object.encode,
+      collections.token_approval_object.decode,
+      collections.token_approval_object.encode,
       null
     );
     this._operators = new Storage.Map(
       this._contractId,
       OPERATORS_SPACE_ID,
-      kanvasgodscontract.operator_approval_object.decode,
-      kanvasgodscontract.operator_approval_object.encode,
+      collections.operator_approval_object.decode,
+      collections.operator_approval_object.encode,
       null
     );
     this._tokensOf = new Storage.Map(
       this._contractId,
       TOKEN_OF_SPACE_ID,
-      kanvasgodscontract.tokens_of_result.decode,
-      kanvasgodscontract.tokens_of_result.encode,
-      () => new kanvasgodscontract.tokens_of_result([])
+      collections.tokens_of_result.decode,
+      collections.tokens_of_result.encode,
+      () => new collections.tokens_of_result([])
     );
     this._config = new Storage.Obj(
       this._contractId,
       CONFIG_SPACE_ID,
-      kanvasgodscontract.config_object.decode,
-      kanvasgodscontract.config_object.encode,
-      () => new kanvasgodscontract.config_object(Constants.OWNER, [])
+      collections.config_object.decode,
+      collections.config_object.encode,
+      () => new collections.config_object(Constants.OWNER, [])
     );
   }
 
@@ -90,10 +90,8 @@ export class Kanvasgodscontract {
    * @external
    * @readonly
    */
-  name(
-    args: kanvasgodscontract.name_arguments
-  ): kanvasgodscontract.string_object {
-    return new kanvasgodscontract.string_object(Constants.NAME);
+  name(args: collections.name_arguments): collections.string_object {
+    return new collections.string_object(Constants.NAME);
   }
 
   /**
@@ -101,10 +99,8 @@ export class Kanvasgodscontract {
    * @external
    * @readonly
    */
-  symbol(
-    args: kanvasgodscontract.symbol_arguments
-  ): kanvasgodscontract.string_object {
-    return new kanvasgodscontract.string_object(Constants.SYMBOL);
+  symbol(args: collections.symbol_arguments): collections.string_object {
+    return new collections.string_object(Constants.SYMBOL);
   }
 
   /**
@@ -112,10 +108,8 @@ export class Kanvasgodscontract {
    * @external
    * @readonly
    */
-  uri(
-    args: kanvasgodscontract.uri_arguments
-  ): kanvasgodscontract.string_object {
-    return new kanvasgodscontract.string_object(Constants.URI);
+  uri(args: collections.uri_arguments): collections.string_object {
+    return new collections.string_object(Constants.URI);
   }
 
   /**
@@ -124,10 +118,10 @@ export class Kanvasgodscontract {
    * @readonly
    */
   total_supply(
-    args: kanvasgodscontract.total_supply_arguments
-  ): kanvasgodscontract.uint64_object {
+    args: collections.total_supply_arguments
+  ): collections.uint64_object {
     const supply = this._supply.get()!;
-    return new kanvasgodscontract.uint64_object(supply.value);
+    return new collections.uint64_object(supply.value);
   }
 
   /**
@@ -136,10 +130,10 @@ export class Kanvasgodscontract {
    * @readonly
    */
   royalties(
-    args: kanvasgodscontract.royalties_arguments
-  ): kanvasgodscontract.royalties_result {
+    args: collections.royalties_arguments
+  ): collections.royalties_result {
     const config = this._config.get()!;
-    return new kanvasgodscontract.royalties_result(config.royalties);
+    return new collections.royalties_result(config.royalties);
   }
 
   /**
@@ -147,8 +141,8 @@ export class Kanvasgodscontract {
    * @external
    */
   set_royalties(
-    args: kanvasgodscontract.set_royalties_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.set_royalties_arguments
+  ): collections.empty_object {
     // check owner
     const config = this._config.get()!;
     this._checkOwner(config);
@@ -169,17 +163,14 @@ export class Kanvasgodscontract {
     config.royalties = args.value;
     this._config.put(config);
 
-    const royaltiesEvent = new kanvasgodscontract.royalties_event(royalties);
+    const royaltiesEvent = new collections.royalties_event(royalties);
     System.event(
       "collections.royalties_event",
-      Protobuf.encode(
-        royaltiesEvent,
-        kanvasgodscontract.royalties_event.encode
-      ),
+      Protobuf.encode(royaltiesEvent, collections.royalties_event.encode),
       impacted
     );
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
   /**
@@ -187,11 +178,9 @@ export class Kanvasgodscontract {
    * @external
    * @readonly
    */
-  owner(
-    args: kanvasgodscontract.owner_arguments
-  ): kanvasgodscontract.address_object {
+  owner(args: collections.owner_arguments): collections.address_object {
     const config = this._config.get()!;
-    return new kanvasgodscontract.address_object(config.owner);
+    return new collections.address_object(config.owner);
   }
 
   /**
@@ -199,17 +188,14 @@ export class Kanvasgodscontract {
    * @external
    */
   transfer_ownership(
-    args: kanvasgodscontract.transfer_ownership_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.transfer_ownership_arguments
+  ): collections.empty_object {
     // check owner
     const config = this._config.get()!;
     this._checkOwner(config);
 
     // event
-    const ownerEvent = new kanvasgodscontract.owner_event(
-      config.owner,
-      args.owner
-    );
+    const ownerEvent = new collections.owner_event(config.owner, args.owner);
     const impacted = [config.owner, args.owner];
 
     // update owner
@@ -218,11 +204,11 @@ export class Kanvasgodscontract {
 
     System.event(
       "collections.owner_event",
-      Protobuf.encode(ownerEvent, kanvasgodscontract.owner_event.encode),
+      Protobuf.encode(ownerEvent, collections.owner_event.encode),
       impacted
     );
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
   /**
@@ -231,11 +217,11 @@ export class Kanvasgodscontract {
    * @readonly
    */
   balance_of(
-    args: kanvasgodscontract.balance_of_arguments
-  ): kanvasgodscontract.uint64_object {
+    args: collections.balance_of_arguments
+  ): collections.uint64_object {
     const owner = args.owner;
     const balanceObj = this._balances.get(owner)!;
-    return new kanvasgodscontract.uint64_object(balanceObj.value);
+    return new collections.uint64_object(balanceObj.value);
   }
 
   /**
@@ -244,10 +230,10 @@ export class Kanvasgodscontract {
    * @readonly
    */
   tokens_of(
-    args: kanvasgodscontract.tokens_of_arguments
-  ): kanvasgodscontract.tokens_of_result {
+    args: collections.tokens_of_arguments
+  ): collections.tokens_of_result {
     const owner = args.owner;
-    const tokensIds = new kanvasgodscontract.tokens_of_result(
+    const tokensIds = new collections.tokens_of_result(
       this._tokensOf.get(owner)!.token_id
     );
     return tokensIds;
@@ -258,11 +244,9 @@ export class Kanvasgodscontract {
    * @external
    * @readonly
    */
-  owner_of(
-    args: kanvasgodscontract.owner_of_arguments
-  ): kanvasgodscontract.address_object {
+  owner_of(args: collections.owner_of_arguments): collections.address_object {
     const token_id = StringBytes.bytesToString(args.token_id);
-    const res = new kanvasgodscontract.address_object();
+    const res = new collections.address_object();
     const token = this._tokens.get(token_id);
     if (token) {
       res.value = token.owner;
@@ -276,10 +260,10 @@ export class Kanvasgodscontract {
    * @readonly
    */
   get_approved(
-    args: kanvasgodscontract.get_approved_arguments
-  ): kanvasgodscontract.address_object {
+    args: collections.get_approved_arguments
+  ): collections.address_object {
     const token_id = StringBytes.bytesToString(args.token_id);
-    const res = new kanvasgodscontract.address_object();
+    const res = new collections.address_object();
     const approval = this._approvals.get(token_id);
     if (approval) {
       res.value = approval.address;
@@ -305,11 +289,11 @@ export class Kanvasgodscontract {
    * @readonly
    */
   is_approved_for_all(
-    args: kanvasgodscontract.is_approved_for_all_arguments
-  ): kanvasgodscontract.bool_object {
+    args: collections.is_approved_for_all_arguments
+  ): collections.bool_object {
     const owner = args.owner as Uint8Array;
     const operator = args.operator as Uint8Array;
-    const res = new kanvasgodscontract.bool_object();
+    const res = new collections.bool_object();
     const approval = this._operators.get(
       this._get_approved_operator_key(owner, operator)
     );
@@ -323,9 +307,7 @@ export class Kanvasgodscontract {
    * Mint a new token
    * @external
    */
-  mint(
-    args: kanvasgodscontract.mint_arguments
-  ): kanvasgodscontract.empty_object {
+  mint(args: collections.mint_arguments): collections.empty_object {
     const to = Constants.OWNER;
 
     // process
@@ -363,7 +345,7 @@ export class Kanvasgodscontract {
 
     // assign the new token's owner
     const start = SafeMath.add(supply.value, 1);
-    const newToken = new kanvasgodscontract.token_object();
+    const newToken = new collections.token_object();
     let tokenId: string;
 
     for (let index = start; index <= tokens; index++) {
@@ -378,7 +360,7 @@ export class Kanvasgodscontract {
       this._tokensOf.put(to, tokensOf);
 
       // events
-      const mintEvent = new kanvasgodscontract.mint_event(
+      const mintEvent = new collections.mint_event(
         to,
         StringBytes.stringToBytes(tokenId)
       );
@@ -386,7 +368,7 @@ export class Kanvasgodscontract {
       const impacted = [to];
       System.event(
         "collections.mint_event",
-        Protobuf.encode(mintEvent, kanvasgodscontract.mint_event.encode),
+        Protobuf.encode(mintEvent, collections.mint_event.encode),
         impacted
       );
     }
@@ -407,22 +389,18 @@ export class Kanvasgodscontract {
     this._balances.put(to, balance);
     this._supply.put(supply);
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
-  burn(
-    args: kanvasgodscontract.burn_arguments
-  ): kanvasgodscontract.empty_object {
-    return new kanvasgodscontract.empty_object();
+  burn(args: collections.burn_arguments): collections.empty_object {
+    return new collections.empty_object();
   }
 
   /**
    * Transfer tokens
    * @external
    */
-  transfer(
-    args: kanvasgodscontract.transfer_arguments
-  ): kanvasgodscontract.empty_object {
+  transfer(args: collections.transfer_arguments): collections.empty_object {
     // data
     const from = args.from;
     const to = args.to;
@@ -501,12 +479,9 @@ export class Kanvasgodscontract {
     tokens_list_to.push(token_id);
     this._tokensOf.put(
       from,
-      new kanvasgodscontract.tokens_of_result(tokens_list_from)
+      new collections.tokens_of_result(tokens_list_from)
     );
-    this._tokensOf.put(
-      to,
-      new kanvasgodscontract.tokens_of_result(tokens_list_to)
-    );
+    this._tokensOf.put(to, new collections.tokens_of_result(tokens_list_to));
 
     // save new states
     this._tokens.put(token_id, token!);
@@ -514,7 +489,7 @@ export class Kanvasgodscontract {
     this._balances.put(from, balance_from);
 
     // generate event
-    const transferEvent = new kanvasgodscontract.transfer_event(
+    const transferEvent = new collections.transfer_event(
       from,
       to,
       args.token_id
@@ -522,20 +497,18 @@ export class Kanvasgodscontract {
     const impacted = [to, from];
     System.event(
       "collections.transfer_event",
-      Protobuf.encode(transferEvent, kanvasgodscontract.transfer_event.encode),
+      Protobuf.encode(transferEvent, collections.transfer_event.encode),
       impacted
     );
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
   /**
    * Approves the spender to transfer a specific amount of tokens on behalf of the owner.
    * @external
    */
-  approve(
-    args: kanvasgodscontract.approve_arguments
-  ): kanvasgodscontract.empty_object {
+  approve(args: collections.approve_arguments): collections.empty_object {
     const approver_address = args.approver_address;
     const to = args.to;
     const token_id = StringBytes.bytesToString(args.token_id);
@@ -579,11 +552,11 @@ export class Kanvasgodscontract {
     }
 
     // update approval
-    let approval = new kanvasgodscontract.token_approval_object(to);
+    let approval = new collections.token_approval_object(to);
     this._approvals.put(token_id, approval);
 
     // generate event
-    const approvalEvent = new kanvasgodscontract.token_approval_event(
+    const approvalEvent = new collections.token_approval_event(
       approver_address,
       to,
       args.token_id
@@ -591,14 +564,11 @@ export class Kanvasgodscontract {
     const impacted = [to, approver_address];
     System.event(
       "collections.token_approval_event",
-      Protobuf.encode(
-        approvalEvent,
-        kanvasgodscontract.token_approval_event.encode
-      ),
+      Protobuf.encode(approvalEvent, collections.token_approval_event.encode),
       impacted
     );
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
   /**
@@ -606,8 +576,8 @@ export class Kanvasgodscontract {
    * @external
    */
   set_approval_for_all(
-    args: kanvasgodscontract.set_approval_for_all_arguments
-  ): kanvasgodscontract.empty_object {
+    args: collections.set_approval_for_all_arguments
+  ): collections.empty_object {
     const approver_address = args.approver_address;
     const operator_address = args.operator_address;
     const approved = args.approved;
@@ -626,14 +596,14 @@ export class Kanvasgodscontract {
     );
 
     // update the approval
-    let approval = new kanvasgodscontract.operator_approval_object(approved);
+    let approval = new collections.operator_approval_object(approved);
     this._operators.put(
       this._get_approved_operator_key(operator_address, approver_address),
       approval
     );
 
     // generate event
-    const approvalEvent = new kanvasgodscontract.operator_approval_event(
+    const approvalEvent = new collections.operator_approval_event(
       approver_address,
       operator_address,
       approved
@@ -643,18 +613,18 @@ export class Kanvasgodscontract {
       "collections.operator_approval_event",
       Protobuf.encode(
         approvalEvent,
-        kanvasgodscontract.operator_approval_event.encode
+        collections.operator_approval_event.encode
       ),
       impacted
     );
 
-    return new kanvasgodscontract.empty_object();
+    return new collections.empty_object();
   }
 
   /**
    * Helpers
    */
-  _checkOwner(config: kanvasgodscontract.config_object): void {
+  _checkOwner(config: collections.config_object): void {
     let currentOwner: Uint8Array;
     if (config.owner.length) {
       currentOwner = config.owner;

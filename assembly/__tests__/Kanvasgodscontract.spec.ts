@@ -7,7 +7,7 @@ import {
   chain,
 } from "@koinos/sdk-as";
 import { Kanvasgodscontract } from "../Kanvasgodscontract";
-import { kanvasgodscontract } from "../proto/kanvasgodscontract";
+import { collections } from "../proto/collections";
 
 const CONTRACT_ID = Base58.decode("1KANGodsneBDiXyvGT5fYrfDcZpJCjxRQU");
 const MOCK_ACCT1 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqG");
@@ -44,7 +44,7 @@ describe("token", () => {
   it("should get the name", () => {
     const tkn = new Kanvasgodscontract();
 
-    const args = new kanvasgodscontract.name_arguments();
+    const args = new collections.name_arguments();
     const res = tkn.name(args);
 
     expect(res.value).toBe("Kanvas Gods");
@@ -53,7 +53,7 @@ describe("token", () => {
   it("should get the symbol", () => {
     const tkn = new Kanvasgodscontract();
 
-    const args = new kanvasgodscontract.symbol_arguments();
+    const args = new collections.symbol_arguments();
     const res = tkn.symbol(args);
 
     expect(res.value).toBe("KANGODS");
@@ -62,7 +62,7 @@ describe("token", () => {
   it("should get the uri", () => {
     const tkn = new Kanvasgodscontract();
 
-    const args = new kanvasgodscontract.uri_arguments();
+    const args = new collections.uri_arguments();
     const res = tkn.uri(args);
 
     expect(res.value).toBe(
@@ -79,23 +79,19 @@ describe("token", () => {
       chain.privilege.user_mode
     );
     MockVM.setCaller(callerData);
-    const argsMint = new kanvasgodscontract.mint_arguments(CONTRACT_ID, 3);
+    const argsMint = new collections.mint_arguments(CONTRACT_ID, 3);
     tkn.mint(argsMint);
 
-    const argsBalance = new kanvasgodscontract.balance_of_arguments(
-      CONTRACT_ID
-    );
+    const argsBalance = new collections.balance_of_arguments(CONTRACT_ID);
     const resBalance = tkn.balance_of(argsBalance);
 
     expect(resBalance.value).toBe(3);
 
-    const totalSupplyArgs = new kanvasgodscontract.total_supply_arguments();
+    const totalSupplyArgs = new collections.total_supply_arguments();
     const totalSupplyRes = tkn.total_supply(totalSupplyArgs);
     expect(totalSupplyRes.value).toBe(3);
 
-    const tokensOfArgs = new kanvasgodscontract.tokens_of_arguments(
-      CONTRACT_ID
-    );
+    const tokensOfArgs = new collections.tokens_of_arguments(CONTRACT_ID);
     const tokensOfRes = tkn.tokens_of(tokensOfArgs);
     expect(tokensOfRes.token_id.length).toBe(3);
     expect(tokensOfRes.token_id[0]).toBe("1");
@@ -113,12 +109,12 @@ describe("token", () => {
     MockVM.setAuthorities([auth]);
 
     // check total supply
-    const totalSupplyArgs = new kanvasgodscontract.total_supply_arguments();
+    const totalSupplyArgs = new collections.total_supply_arguments();
     let totalSupplyRes = tkn.total_supply(totalSupplyArgs);
     expect(totalSupplyRes.value).toBe(0);
 
     // check balance
-    const balanceArgs = new kanvasgodscontract.balance_of_arguments(MOCK_ACCT1);
+    const balanceArgs = new collections.balance_of_arguments(MOCK_ACCT1);
     let balanceRes = tkn.balance_of(balanceArgs);
     expect(balanceRes.value).toBe(0);
 
@@ -133,7 +129,7 @@ describe("token", () => {
     expect(() => {
       // try to mint tokens
       const tkn = new Kanvasgodscontract();
-      const mintArgs = new kanvasgodscontract.mint_arguments(MOCK_ACCT1, 1);
+      const mintArgs = new collections.mint_arguments(MOCK_ACCT1, 1);
       tkn.mint(mintArgs);
     }).toThrow();
 
@@ -173,11 +169,11 @@ describe("token", () => {
     );
 
     // mint tokens
-    const mintArgs = new kanvasgodscontract.mint_arguments(CONTRACT_ID, 3);
+    const mintArgs = new collections.mint_arguments(CONTRACT_ID, 3);
     tkn.mint(mintArgs);
 
     // transfer tokens
-    const transferArgs = new kanvasgodscontract.transfer_arguments(
+    const transferArgs = new collections.transfer_arguments(
       CONTRACT_ID,
       MOCK_ACCT1,
       FIRST_TOKEN_ID
@@ -185,15 +181,15 @@ describe("token", () => {
     tkn.transfer(transferArgs);
 
     // check balances
-    let balanceArgs = new kanvasgodscontract.balance_of_arguments(CONTRACT_ID);
+    let balanceArgs = new collections.balance_of_arguments(CONTRACT_ID);
     let balanceRes = tkn.balance_of(balanceArgs);
     expect(balanceRes.value).toBe(2);
 
-    balanceArgs = new kanvasgodscontract.balance_of_arguments(MOCK_ACCT1);
+    balanceArgs = new collections.balance_of_arguments(MOCK_ACCT1);
     balanceRes = tkn.balance_of(balanceArgs);
     expect(balanceRes.value).toBe(1);
 
-    let tokensOfFromArgs = new kanvasgodscontract.tokens_of_arguments(
+    let tokensOfFromArgs = new collections.tokens_of_arguments(
       CONTRACT_ID
     );
     let tokensOfFromRes = tkn.tokens_of(tokensOfFromArgs);
@@ -201,7 +197,7 @@ describe("token", () => {
     expect(tokensOfFromRes.token_id[0]).toBe("2");
     expect(tokensOfFromRes.token_id[1]).toBe("3");
 
-    let tokensOfToArgs = new kanvasgodscontract.tokens_of_arguments(MOCK_ACCT1);
+    let tokensOfToArgs = new collections.tokens_of_arguments(MOCK_ACCT1);
     let tokensOfToRes = tkn.tokens_of(tokensOfToArgs);
     expect(tokensOfToRes.token_id.length).toBe(1);
     expect(tokensOfFromRes.token_id[0]).toBe("1");
@@ -210,7 +206,7 @@ describe("token", () => {
   /*it("should get approval", () => {
     const tkn = new Kanvasgodscontract();
 
-    const args = new kanvasgodscontract.get_approved_arguments(FIRST_TOKEN_ID);
+    const args = new collections.get_approved_arguments(FIRST_TOKEN_ID);
     const res = tkn.get_approved(args);
 
     expect(res.value).toBe(null);
@@ -219,7 +215,7 @@ describe("token", () => {
       new chain.caller_data(MOCK_ACCT1, chain.privilege.user_mode)
     );
 
-    const approveArgs = new kanvasgodscontract.approve_arguments(
+    const approveArgs = new collections.approve_arguments(
       MOCK_ACCT1,
       CONTRACT_ID,
       500

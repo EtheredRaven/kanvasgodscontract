@@ -1,131 +1,131 @@
 {
     "methods": {
         "name": {
-            "argument": "kanvasgodscontract.name_arguments",
-            "return": "kanvasgodscontract.string_object",
+            "argument": "collections.name_arguments",
+            "return": "collections.string_object",
             "description": "Returns the token's name",
             "entry-point": "0x82a3537f",
             "read-only": true
         },
         "uri": {
-            "argument": "kanvasgodscontract.uri_arguments",
-            "return": "kanvasgodscontract.string_object",
+            "argument": "collections.uri_arguments",
+            "return": "collections.string_object",
             "description": "Returns the token's uri",
             "entry-point": "0x70e5d7b6",
             "read-only": true
         },
         "symbol": {
-            "argument": "kanvasgodscontract.symbol_arguments",
-            "return": "kanvasgodscontract.string_object",
+            "argument": "collections.symbol_arguments",
+            "return": "collections.string_object",
             "description": "Returns the token's symbol",
             "entry-point": "0xb76a7ca1",
             "read-only": true
         },
         "get_approved": {
-            "argument": "kanvasgodscontract.get_approved_arguments",
-            "return": "kanvasgodscontract.address_object",
+            "argument": "collections.get_approved_arguments",
+            "return": "collections.address_object",
             "description": "Gets approved address for a token",
             "entry-point": "0x4c731020",
             "read-only": true
         },
         "is_approved_for_all": {
-            "argument": "kanvasgodscontract.is_approved_for_all_arguments",
-            "return": "kanvasgodscontract.bool_object",
+            "argument": "collections.is_approved_for_all_arguments",
+            "return": "collections.bool_object",
             "description": "Checks if an operator is approved by an owner",
             "entry-point": "0xe7ab8ce5",
             "read-only": true
         },
         "total_supply": {
-            "argument": "kanvasgodscontract.total_supply_arguments",
-            "return": "kanvasgodscontract.uint64_object",
+            "argument": "collections.total_supply_arguments",
+            "return": "collections.uint64_object",
             "description": "Returns the token's total supply",
             "entry-point": "0xb0da3934",
             "read-only": true
         },
         "royalties": {
-            "argument": "kanvasgodscontract.royalties_arguments",
-            "return": "kanvasgodscontract.royalties_result",
+            "argument": "collections.royalties_arguments",
+            "return": "collections.royalties_result",
             "description": "Returns collection royalties",
             "entry-point": "0x36e90cd0",
             "read-only": true
         },
         "set_royalties": {
-            "argument": "kanvasgodscontract.set_royalties_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.set_royalties_arguments",
+            "return": "collections.empty_object",
             "description": "Returns collection royalties",
             "entry-point": "0x3b5bb56b",
             "read-only": false
         },
         "owner": {
-            "argument": "kanvasgodscontract.owner_arguments",
-            "return": "kanvasgodscontract.address_object",
+            "argument": "collections.owner_arguments",
+            "return": "collections.address_object",
             "description": "Returns collection owner",
             "entry-point": "0x4c102969",
             "read-only": true
         },
         "transfer_ownership": {
-            "argument": "kanvasgodscontract.transfer_ownership_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.transfer_ownership_arguments",
+            "return": "collections.empty_object",
             "description": "Transfer ownership",
             "entry-point": "0x394be702",
             "read-only": false
         },
         "balance_of": {
-            "argument": "kanvasgodscontract.balance_of_arguments",
-            "return": "kanvasgodscontract.uint64_object",
+            "argument": "collections.balance_of_arguments",
+            "return": "collections.uint64_object",
             "description": "Gets the balance of an owner",
             "entry-point": "0x5c721497",
             "read-only": true
         },
         "tokens_of": {
-            "argument": "kanvasgodscontract.tokens_of_arguments",
-            "return": "kanvasgodscontract.tokens_of_result",
+            "argument": "collections.tokens_of_arguments",
+            "return": "collections.tokens_of_result",
             "description": "Gets the token ids of an owner",
             "entry-point": "0x981c7e47",
             "read-only": true
         },
         "owner_of": {
-            "argument": "kanvasgodscontract.owner_of_arguments",
-            "return": "kanvasgodscontract.address_object",
+            "argument": "collections.owner_of_arguments",
+            "return": "collections.address_object",
             "description": "Gets the owner of a token",
             "entry-point": "0xed61c847",
             "read-only": true
         },
         "mint": {
-            "argument": "kanvasgodscontract.mint_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.mint_arguments",
+            "return": "collections.empty_object",
             "description": "Mints a new token",
             "entry-point": "0xdc6f17bb",
             "read-only": false
         },
         "burn": {
-            "argument": "kanvasgodscontract.burn_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.burn_arguments",
+            "return": "collections.empty_object",
             "description": "Burns an existing token",
             "entry-point": "0x859facc5",
             "read-only": false
         },
         "transfer": {
-            "argument": "kanvasgodscontract.transfer_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.transfer_arguments",
+            "return": "collections.empty_object",
             "description": "Transfers a token",
             "entry-point": "0x27f576ca",
             "read-only": false
         },
         "approve": {
-            "argument": "kanvasgodscontract.approve_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.approve_arguments",
+            "return": "collections.empty_object",
             "description": "Approves an address to transfer a token",
             "entry-point": "0x74e21680",
             "read-only": false
         },
         "set_approval_for_all": {
-            "argument": "kanvasgodscontract.set_approval_for_all_arguments",
-            "return": "kanvasgodscontract.empty_object",
+            "argument": "collections.set_approval_for_all_arguments",
+            "return": "collections.empty_object",
             "description": "Approves or revokes an address to operate on all tokens owned by caller",
             "entry-point": "0x20442216",
             "read-only": false
         }
     },
-    "types": "Cp8UCidhc3NlbWJseS9wcm90by9rYW52YXNnb2RzY29udHJhY3QucHJvdG8SEmthbnZhc2dvZHNjb250cmFjdBoUa29pbm9zL29wdGlvbnMucHJvdG8iDgoMZW1wdHlfb2JqZWN0IiUKDXN0cmluZ19vYmplY3QSFAoFdmFsdWUYASABKAlSBXZhbHVlIikKDXVpbnQ2NF9vYmplY3QSGAoFdmFsdWUYASABKARCAjABUgV2YWx1ZSIjCgtib29sX29iamVjdBIUCgV2YWx1ZRgBIAEoCFIFdmFsdWUiLAoOYWRkcmVzc19vYmplY3QSGgoFdmFsdWUYASABKAxCBIC1GAZSBXZhbHVlIioKDHRva2VuX29iamVjdBIaCgVvd25lchgBIAEoDEIEgLUYBlIFb3duZXIiKgoOYmFsYW5jZV9vYmplY3QSGAoFdmFsdWUYASABKARCAjABUgV2YWx1ZSJMCg5yb3lhbHR5X29iamVjdBIaCgZhbW91bnQYASABKARCAjABUgZhbW91bnQSHgoHYWRkcmVzcxgCIAEoDEIEgLUYBlIHYWRkcmVzcyJtCg1jb25maWdfb2JqZWN0EhoKBW93bmVyGAEgASgMQgSAtRgGUgVvd25lchJACglyb3lhbHRpZXMYAiADKAsyIi5rYW52YXNnb2RzY29udHJhY3Qucm95YWx0eV9vYmplY3RSCXJveWFsdGllcyI3ChV0b2tlbl9hcHByb3ZhbF9vYmplY3QSHgoHYWRkcmVzcxgBIAEoDEIEgLUYBlIHYWRkcmVzcyI2ChhvcGVyYXRvcl9hcHByb3ZhbF9vYmplY3QSGgoIYXBwcm92ZWQYASABKAhSCGFwcHJvdmVkIhAKDm5hbWVfYXJndW1lbnRzIg8KDXVyaV9hcmd1bWVudHMiEgoQc3ltYm9sX2FyZ3VtZW50cyI5ChZnZXRfYXBwcm92ZWRfYXJndW1lbnRzEh8KCHRva2VuX2lkGAEgASgMQgSAtRgCUgd0b2tlbklkIl0KHWlzX2FwcHJvdmVkX2Zvcl9hbGxfYXJndW1lbnRzEhoKBW93bmVyGAEgASgMQgSAtRgGUgVvd25lchIgCghvcGVyYXRvchgCIAEoDEIEgLUYBlIIb3BlcmF0b3IiGAoWdG90YWxfc3VwcGx5X2FyZ3VtZW50cyIVChNyb3lhbHRpZXNfYXJndW1lbnRzIkwKEHJveWFsdGllc19yZXN1bHQSOAoFdmFsdWUYASADKAsyIi5rYW52YXNnb2RzY29udHJhY3Qucm95YWx0eV9vYmplY3RSBXZhbHVlIlMKF3NldF9yb3lhbHRpZXNfYXJndW1lbnRzEjgKBXZhbHVlGAEgAygLMiIua2FudmFzZ29kc2NvbnRyYWN0LnJveWFsdHlfb2JqZWN0UgV2YWx1ZSIRCg9vd25lcl9hcmd1bWVudHMiOgocdHJhbnNmZXJfb3duZXJzaGlwX2FyZ3VtZW50cxIaCgVvd25lchgBIAEoDEIEgLUYBlIFb3duZXIiMgoUYmFsYW5jZV9vZl9hcmd1bWVudHMSGgoFb3duZXIYASABKAxCBIC1GAZSBW93bmVyIjEKE3Rva2Vuc19vZl9hcmd1bWVudHMSGgoFb3duZXIYASABKAxCBIC1GAZSBW93bmVyIi0KEHRva2Vuc19vZl9yZXN1bHQSGQoIdG9rZW5faWQYASADKAlSB3Rva2VuSWQiNQoSb3duZXJfb2ZfYXJndW1lbnRzEh8KCHRva2VuX2lkGAEgASgMQgSAtRgCUgd0b2tlbklkIl0KDm1pbnRfYXJndW1lbnRzEhQKAnRvGAEgASgMQgSAtRgGUgJ0bxI1ChVudW1iZXJfdG9rZW5zX3RvX21pbnQYAiABKARCAjABUhJudW1iZXJUb2tlbnNUb01pbnQiSwoOYnVybl9hcmd1bWVudHMSGAoEZnJvbRgBIAEoDEIEgLUYBlIEZnJvbRIfCgh0b2tlbl9pZBgCIAEoDEIEgLUYAlIHdG9rZW5JZCJlChJ0cmFuc2Zlcl9hcmd1bWVudHMSGAoEZnJvbRgBIAEoDEIEgLUYBlIEZnJvbRIUCgJ0bxgCIAEoDEIEgLUYBlICdG8SHwoIdG9rZW5faWQYAyABKAxCBIC1GAJSB3Rva2VuSWQiewoRYXBwcm92ZV9hcmd1bWVudHMSLwoQYXBwcm92ZXJfYWRkcmVzcxgBIAEoDEIEgLUYBlIPYXBwcm92ZXJBZGRyZXNzEhQKAnRvGAIgASgMQgSAtRgGUgJ0bxIfCgh0b2tlbl9pZBgDIAEoDEIEgLUYAlIHdG9rZW5JZCKeAQoec2V0X2FwcHJvdmFsX2Zvcl9hbGxfYXJndW1lbnRzEi8KEGFwcHJvdmVyX2FkZHJlc3MYASABKAxCBIC1GAZSD2FwcHJvdmVyQWRkcmVzcxIvChBvcGVyYXRvcl9hZGRyZXNzGAIgASgMQgSAtRgGUg9vcGVyYXRvckFkZHJlc3MSGgoIYXBwcm92ZWQYAyABKAhSCGFwcHJvdmVkIkMKCm1pbnRfZXZlbnQSFAoCdG8YASABKAxCBIC1GAZSAnRvEh8KCHRva2VuX2lkGAIgASgMQgSAtRgCUgd0b2tlbklkIj0KC293bmVyX2V2ZW50EhgKBGZyb20YASABKAxCBIC1GAZSBGZyb20SFAoCdG8YAiABKAxCBIC1GAZSAnRvIksKD3JveWFsdGllc19ldmVudBI4CgV2YWx1ZRgBIAMoCzIiLmthbnZhc2dvZHNjb250cmFjdC5yb3lhbHR5X29iamVjdFIFdmFsdWUiRwoKYnVybl9ldmVudBIYCgRmcm9tGAEgASgMQgSAtRgGUgRmcm9tEh8KCHRva2VuX2lkGAIgASgMQgSAtRgCUgd0b2tlbklkImEKDnRyYW5zZmVyX2V2ZW50EhgKBGZyb20YASABKAxCBIC1GAZSBGZyb20SFAoCdG8YAiABKAxCBIC1GAZSAnRvEh8KCHRva2VuX2lkGAMgASgMQgSAtRgCUgd0b2tlbklkIpcBChdvcGVyYXRvcl9hcHByb3ZhbF9ldmVudBIvChBhcHByb3Zlcl9hZGRyZXNzGAEgASgMQgSAtRgGUg9hcHByb3ZlckFkZHJlc3MSLwoQb3BlcmF0b3JfYWRkcmVzcxgCIAEoDEIEgLUYBlIPb3BlcmF0b3JBZGRyZXNzEhoKCGFwcHJvdmVkGAMgASgIUghhcHByb3ZlZCJ+ChR0b2tlbl9hcHByb3ZhbF9ldmVudBIvChBhcHByb3Zlcl9hZGRyZXNzGAEgASgMQgSAtRgGUg9hcHByb3ZlckFkZHJlc3MSFAoCdG8YAiABKAxCBIC1GAZSAnRvEh8KCHRva2VuX2lkGAMgASgMQgSAtRgCUgd0b2tlbklkYgZwcm90bzM="
+    "types": "CvwTCidhc3NlbWJseS9wcm90by9rYW52YXNnb2RzY29udHJhY3QucHJvdG8SC2NvbGxlY3Rpb25zGhRrb2lub3Mvb3B0aW9ucy5wcm90byIOCgxlbXB0eV9vYmplY3QiJQoNc3RyaW5nX29iamVjdBIUCgV2YWx1ZRgBIAEoCVIFdmFsdWUiKQoNdWludDY0X29iamVjdBIYCgV2YWx1ZRgBIAEoBEICMAFSBXZhbHVlIiMKC2Jvb2xfb2JqZWN0EhQKBXZhbHVlGAEgASgIUgV2YWx1ZSIsCg5hZGRyZXNzX29iamVjdBIaCgV2YWx1ZRgBIAEoDEIEgLUYBlIFdmFsdWUiKgoMdG9rZW5fb2JqZWN0EhoKBW93bmVyGAEgASgMQgSAtRgGUgVvd25lciIqCg5iYWxhbmNlX29iamVjdBIYCgV2YWx1ZRgBIAEoBEICMAFSBXZhbHVlIkwKDnJveWFsdHlfb2JqZWN0EhoKBmFtb3VudBgBIAEoBEICMAFSBmFtb3VudBIeCgdhZGRyZXNzGAIgASgMQgSAtRgGUgdhZGRyZXNzImYKDWNvbmZpZ19vYmplY3QSGgoFb3duZXIYASABKAxCBIC1GAZSBW93bmVyEjkKCXJveWFsdGllcxgCIAMoCzIbLmNvbGxlY3Rpb25zLnJveWFsdHlfb2JqZWN0Uglyb3lhbHRpZXMiNwoVdG9rZW5fYXBwcm92YWxfb2JqZWN0Eh4KB2FkZHJlc3MYASABKAxCBIC1GAZSB2FkZHJlc3MiNgoYb3BlcmF0b3JfYXBwcm92YWxfb2JqZWN0EhoKCGFwcHJvdmVkGAEgASgIUghhcHByb3ZlZCIQCg5uYW1lX2FyZ3VtZW50cyIPCg11cmlfYXJndW1lbnRzIhIKEHN5bWJvbF9hcmd1bWVudHMiOQoWZ2V0X2FwcHJvdmVkX2FyZ3VtZW50cxIfCgh0b2tlbl9pZBgBIAEoDEIEgLUYAlIHdG9rZW5JZCJdCh1pc19hcHByb3ZlZF9mb3JfYWxsX2FyZ3VtZW50cxIaCgVvd25lchgBIAEoDEIEgLUYBlIFb3duZXISIAoIb3BlcmF0b3IYAiABKAxCBIC1GAZSCG9wZXJhdG9yIhgKFnRvdGFsX3N1cHBseV9hcmd1bWVudHMiFQoTcm95YWx0aWVzX2FyZ3VtZW50cyJFChByb3lhbHRpZXNfcmVzdWx0EjEKBXZhbHVlGAEgAygLMhsuY29sbGVjdGlvbnMucm95YWx0eV9vYmplY3RSBXZhbHVlIkwKF3NldF9yb3lhbHRpZXNfYXJndW1lbnRzEjEKBXZhbHVlGAEgAygLMhsuY29sbGVjdGlvbnMucm95YWx0eV9vYmplY3RSBXZhbHVlIhEKD293bmVyX2FyZ3VtZW50cyI6Chx0cmFuc2Zlcl9vd25lcnNoaXBfYXJndW1lbnRzEhoKBW93bmVyGAEgASgMQgSAtRgGUgVvd25lciIyChRiYWxhbmNlX29mX2FyZ3VtZW50cxIaCgVvd25lchgBIAEoDEIEgLUYBlIFb3duZXIiMQoTdG9rZW5zX29mX2FyZ3VtZW50cxIaCgVvd25lchgBIAEoDEIEgLUYBlIFb3duZXIiLQoQdG9rZW5zX29mX3Jlc3VsdBIZCgh0b2tlbl9pZBgBIAMoCVIHdG9rZW5JZCI1ChJvd25lcl9vZl9hcmd1bWVudHMSHwoIdG9rZW5faWQYASABKAxCBIC1GAJSB3Rva2VuSWQiXQoObWludF9hcmd1bWVudHMSFAoCdG8YASABKAxCBIC1GAZSAnRvEjUKFW51bWJlcl90b2tlbnNfdG9fbWludBgCIAEoBEICMAFSEm51bWJlclRva2Vuc1RvTWludCJLCg5idXJuX2FyZ3VtZW50cxIYCgRmcm9tGAEgASgMQgSAtRgGUgRmcm9tEh8KCHRva2VuX2lkGAIgASgMQgSAtRgCUgd0b2tlbklkImUKEnRyYW5zZmVyX2FyZ3VtZW50cxIYCgRmcm9tGAEgASgMQgSAtRgGUgRmcm9tEhQKAnRvGAIgASgMQgSAtRgGUgJ0bxIfCgh0b2tlbl9pZBgDIAEoDEIEgLUYAlIHdG9rZW5JZCJ7ChFhcHByb3ZlX2FyZ3VtZW50cxIvChBhcHByb3Zlcl9hZGRyZXNzGAEgASgMQgSAtRgGUg9hcHByb3ZlckFkZHJlc3MSFAoCdG8YAiABKAxCBIC1GAZSAnRvEh8KCHRva2VuX2lkGAMgASgMQgSAtRgCUgd0b2tlbklkIp4BCh5zZXRfYXBwcm92YWxfZm9yX2FsbF9hcmd1bWVudHMSLwoQYXBwcm92ZXJfYWRkcmVzcxgBIAEoDEIEgLUYBlIPYXBwcm92ZXJBZGRyZXNzEi8KEG9wZXJhdG9yX2FkZHJlc3MYAiABKAxCBIC1GAZSD29wZXJhdG9yQWRkcmVzcxIaCghhcHByb3ZlZBgDIAEoCFIIYXBwcm92ZWQiQwoKbWludF9ldmVudBIUCgJ0bxgBIAEoDEIEgLUYBlICdG8SHwoIdG9rZW5faWQYAiABKAxCBIC1GAJSB3Rva2VuSWQiPQoLb3duZXJfZXZlbnQSGAoEZnJvbRgBIAEoDEIEgLUYBlIEZnJvbRIUCgJ0bxgCIAEoDEIEgLUYBlICdG8iRAoPcm95YWx0aWVzX2V2ZW50EjEKBXZhbHVlGAEgAygLMhsuY29sbGVjdGlvbnMucm95YWx0eV9vYmplY3RSBXZhbHVlIkcKCmJ1cm5fZXZlbnQSGAoEZnJvbRgBIAEoDEIEgLUYBlIEZnJvbRIfCgh0b2tlbl9pZBgCIAEoDEIEgLUYAlIHdG9rZW5JZCJhCg50cmFuc2Zlcl9ldmVudBIYCgRmcm9tGAEgASgMQgSAtRgGUgRmcm9tEhQKAnRvGAIgASgMQgSAtRgGUgJ0bxIfCgh0b2tlbl9pZBgDIAEoDEIEgLUYAlIHdG9rZW5JZCKXAQoXb3BlcmF0b3JfYXBwcm92YWxfZXZlbnQSLwoQYXBwcm92ZXJfYWRkcmVzcxgBIAEoDEIEgLUYBlIPYXBwcm92ZXJBZGRyZXNzEi8KEG9wZXJhdG9yX2FkZHJlc3MYAiABKAxCBIC1GAZSD29wZXJhdG9yQWRkcmVzcxIaCghhcHByb3ZlZBgDIAEoCFIIYXBwcm92ZWQifgoUdG9rZW5fYXBwcm92YWxfZXZlbnQSLwoQYXBwcm92ZXJfYWRkcmVzcxgBIAEoDEIEgLUYBlIPYXBwcm92ZXJBZGRyZXNzEhQKAnRvGAIgASgMQgSAtRgGUgJ0bxIfCgh0b2tlbl9pZBgDIAEoDEIEgLUYAlIHdG9rZW5JZGIGcHJvdG8z"
 }

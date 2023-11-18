@@ -275,7 +275,7 @@
  (data $118.4 (i32.const 8544) "\04A")
  (data $118.5 (i32.const 8592) "\02A\00\00 ")
  (table $0 62 62 funcref)
- (elem $0 (i32.const 1) $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|2 $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|3 $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.get_approved_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.is_approved_for_all_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalties_result.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.set_royalties_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalties_result.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_ownership_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.owner_event.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_of_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.owner_of_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.mint_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.owner_event.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.burn_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_event.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.approve_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_event.encode $assembly/proto/kanvasgodscontract/kanvasgodscontract.set_approval_for_all_arguments.decode $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_event.encode)
+ (elem $0 (i32.const 1) $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/collections/collections.balance_object.decode $assembly/proto/collections/collections.balance_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 $assembly/proto/collections/collections.token_object.decode $assembly/proto/collections/collections.token_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 $assembly/proto/collections/collections.token_approval_object.decode $assembly/proto/collections/collections.token_object.encode $assembly/proto/collections/collections.operator_approval_object.decode $assembly/proto/collections/collections.operator_approval_object.encode $assembly/proto/collections/collections.tokens_of_result.decode $assembly/proto/collections/collections.tokens_of_result.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|2 $assembly/proto/collections/collections.config_object.decode $assembly/proto/collections/collections.config_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|3 $assembly/proto/collections/collections.name_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.encode $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.get_approved_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result.decode $assembly/proto/collections/collections.token_object.encode $assembly/proto/collections/collections.is_approved_for_all_arguments.decode $assembly/proto/collections/collections.operator_approval_object.encode $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.balance_object.encode $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.royalties_result.encode $assembly/proto/collections/collections.set_royalties_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments.encode $assembly/proto/collections/collections.operator_approval_object.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments.encode $assembly/proto/collections/collections.royalties_result.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.transfer_ownership_arguments.decode $assembly/proto/collections/collections.owner_event.encode $assembly/proto/collections/collections.balance_of_arguments.decode $assembly/proto/collections/collections.tokens_of_arguments.decode $assembly/proto/collections/collections.owner_of_arguments.decode $assembly/proto/collections/collections.mint_arguments.decode $assembly/proto/collections/collections.owner_event.encode $assembly/proto/collections/collections.burn_arguments.decode $assembly/proto/collections/collections.transfer_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $assembly/proto/collections/collections.transfer_event.encode $assembly/proto/collections/collections.approve_arguments.decode $assembly/proto/collections/collections.transfer_event.encode $assembly/proto/collections/collections.set_approval_for_all_arguments.decode $assembly/proto/collections/collections.operator_approval_event.encode)
  (export "main" (func $assembly/index/main))
  (export "memory" (memory $0))
  (export "_start" (func $~start))
@@ -3033,7 +3033,7 @@
    end
   end
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object#constructor (param $0 i64) (result i32)
+ (func $assembly/proto/collections/collections.balance_object#constructor (param $0 i64) (result i32)
   (local $1 i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
@@ -3055,9 +3055,9 @@
  )
  (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 (result i32)
   i64.const 0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object#constructor
+  call $assembly/proto/collections/collections.balance_object#constructor
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object#constructor (param $0 i32) (result i32)
+ (func $assembly/proto/collections/collections.operator_approval_object#constructor (param $0 i32) (result i32)
   (local $1 i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
@@ -10380,7 +10380,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.balance_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -10416,7 +10416,7 @@
   end
   local.set $2
   i64.const 0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object#constructor
+  call $assembly/proto/collections/collections.balance_object#constructor
   local.set $3
   loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
@@ -10464,7 +10464,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.balance_object.encode (param $0 i32) (param $1 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.sub
@@ -10502,7 +10502,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object#constructor@varargs (result i32)
+ (func $assembly/proto/collections/collections.token_object#constructor@varargs (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -10600,7 +10600,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.token_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -10642,7 +10642,7 @@
   i32.const 0
   global.set $~argumentsLength
   global.get $~lib/memory/__stack_pointer
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object#constructor@varargs
+  call $assembly/proto/collections/collections.token_object#constructor@varargs
   local.tee $1
   i32.store $0 offset=4
   loop $while-continue|0
@@ -10719,7 +10719,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.token_object.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -10799,7 +10799,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object#constructor (param $0 i32) (result i32)
+ (func $assembly/proto/collections/collections.token_approval_object#constructor (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -10854,7 +10854,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.token_approval_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -10938,7 +10938,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object#constructor
+  call $assembly/proto/collections/collections.token_approval_object#constructor
   local.set $1
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -11021,7 +11021,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.operator_approval_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -11057,7 +11057,7 @@
   end
   local.set $2
   i32.const 0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object#constructor
+  call $assembly/proto/collections/collections.operator_approval_object#constructor
   local.set $3
   loop $while-continue|0
    global.get $~lib/memory/__stack_pointer
@@ -11105,7 +11105,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.operator_approval_object.encode (param $0 i32) (param $1 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.sub
@@ -11141,7 +11141,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor (param $0 i32) (result i32)
+ (func $assembly/proto/collections/collections.tokens_of_result#constructor (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -11255,7 +11255,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.tokens_of_result.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -11340,7 +11340,7 @@
   local.get $2
   i32.store $0 offset=8
   local.get $2
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor
+  call $assembly/proto/collections/collections.tokens_of_result#constructor
   local.set $2
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -11409,7 +11409,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.tokens_of_result.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -11603,7 +11603,7 @@
   local.get $0
   i32.store $0
   local.get $0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor
+  call $assembly/proto/collections/collections.tokens_of_result#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -11611,7 +11611,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object#constructor (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.config_object#constructor (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -11689,7 +11689,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.royalty_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -11937,7 +11937,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.config_object.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -12042,7 +12042,7 @@
   i32.store $0 offset=16
   local.get $1
   local.get $2
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object#constructor
+  call $assembly/proto/collections/collections.config_object#constructor
   local.set $1
   global.get $~lib/memory/__stack_pointer
   i32.const 20
@@ -12135,7 +12135,7 @@
      local.get $0
      local.get $0
      call $~lib/as-proto/assembly/Reader/Reader#uint32@override
-     call $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.decode
+     call $assembly/proto/collections/collections.royalty_object.decode
      local.set $2
      global.get $~lib/memory/__stack_pointer
      local.get $2
@@ -12162,7 +12162,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.royalty_object.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -12268,7 +12268,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.config_object.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -12456,7 +12456,7 @@
     i32.store $0 offset=4
     local.get $3
     local.get $1
-    call $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.encode
+    call $assembly/proto/collections/collections.royalty_object.encode
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store $0
@@ -12506,7 +12506,7 @@
   i32.store $0 offset=4
   local.get $1
   local.get $0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object#constructor
+  call $assembly/proto/collections/collections.config_object#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
   i32.const 8
@@ -13856,7 +13856,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.name_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.name_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -13934,7 +13934,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.string_object#constructor (param $0 i32) (result i32)
+ (func $assembly/proto/collections/collections.string_object#constructor (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -13989,7 +13989,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.get_approved_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.get_approved_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -14202,7 +14202,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor (param $0 i32) (result i32)
+ (func $assembly/proto/collections/collections.address_object#constructor (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -14257,7 +14257,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor@varargs (result i32)
+ (func $assembly/proto/collections/collections.address_object#constructor@varargs (result i32)
   (local $0 i32)
   (local $1 i32)
   global.get $~lib/memory/__stack_pointer
@@ -14299,7 +14299,7 @@
   local.get $0
   i32.store $0 offset=8
   local.get $0
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor
+  call $assembly/proto/collections/collections.address_object#constructor
   local.set $0
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -15416,7 +15416,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object> (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/collections/collections.token_approval_object> (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -15476,7 +15476,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -15523,7 +15523,7 @@
   local.get $3
   local.get $1
   local.get $4
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/collections/collections.token_approval_object>
   local.tee $1
   i32.store $0 offset=16
   local.get $1
@@ -15560,7 +15560,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.is_approved_for_all_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.is_approved_for_all_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -16877,7 +16877,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object>#get (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object>#get (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -16919,7 +16919,7 @@
   local.get $2
   local.get $1
   local.get $3
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/string/String,assembly/proto/collections/collections.token_approval_object>
   local.tee $1
   if (result i32)
    i32.const 0
@@ -17232,7 +17232,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object> (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object> (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 12
@@ -17292,7 +17292,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get (param $0 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#get (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -17336,7 +17336,7 @@
   local.get $3
   local.get $1
   local.get $2
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   local.tee $1
   if (result i32)
    i32.const 0
@@ -17371,7 +17371,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#get (param $0 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -17420,7 +17420,7 @@
   local.get $3
   local.get $1
   local.get $2
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   local.tee $1
   i32.store $0 offset=16
   local.get $1
@@ -17457,7 +17457,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalties_result.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.royalties_result.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -17589,7 +17589,7 @@
     i32.store $0 offset=8
     local.get $3
     local.get $1
-    call $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.encode
+    call $assembly/proto/collections/collections.royalty_object.encode
     global.get $~lib/memory/__stack_pointer
     local.get $1
     i32.store $0
@@ -17607,7 +17607,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.set_royalties_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.set_royalties_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -17790,7 +17790,7 @@
      local.get $0
      local.get $0
      call $~lib/as-proto/assembly/Reader/Reader#uint32@override
-     call $assembly/proto/kanvasgodscontract/kanvasgodscontract.royalty_object.decode
+     call $assembly/proto/collections/collections.royalty_object.decode
      local.set $1
      global.get $~lib/memory/__stack_pointer
      local.get $1
@@ -19172,7 +19172,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object> (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+ (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.config_object> (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 16
@@ -19221,7 +19221,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#put (param $0 i32) (param $1 i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#put (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -19272,7 +19272,7 @@
   local.get $4
   local.get $1
   local.get $0
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.config_object>
   global.get $~lib/memory/__stack_pointer
   i32.const 20
   i32.add
@@ -19851,7 +19851,7 @@
   i32.store $0
   local.get $5
   local.get $6
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get
   local.tee $6
   i32.store $0 offset=8
   local.get $6
@@ -20079,7 +20079,7 @@
   i32.store $0 offset=4
   local.get $0
   local.get $6
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#put
   global.get $~lib/memory/__stack_pointer
   local.set $0
   global.get $~lib/memory/__stack_pointer
@@ -20178,7 +20178,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_ownership_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.transfer_ownership_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -20458,7 +20458,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.owner_event.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.owner_event.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -20666,7 +20666,7 @@
   i32.store $0
   local.get $2
   local.get $3
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get
   local.tee $5
   i32.store $0 offset=8
   local.get $2
@@ -20874,7 +20874,7 @@
   i32.store $0 offset=4
   local.get $0
   local.get $5
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#put
   global.get $~lib/memory/__stack_pointer
   i32.const 6112
   i32.store $0
@@ -20915,7 +20915,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.balance_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -21128,7 +21128,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -21170,7 +21170,7 @@
   local.get $2
   local.get $1
   local.get $3
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   local.tee $1
   if (result i32)
    i32.const 0
@@ -21205,7 +21205,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.tokens_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -21418,7 +21418,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#get (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -21465,7 +21465,7 @@
   local.get $3
   local.get $1
   local.get $4
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   local.tee $1
   i32.store $0 offset=16
   local.get $1
@@ -21502,7 +21502,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.owner_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.owner_of_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -21715,7 +21715,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.mint_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.mint_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -22148,7 +22148,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object>#put (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>#put (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
@@ -22244,7 +22244,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#put (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#put (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
@@ -22293,13 +22293,13 @@
   local.get $1
   local.get $2
   local.get $0
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.config_object>
   global.get $~lib/memory/__stack_pointer
   i32.const 20
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object> (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+ (func $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object> (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 16
@@ -22345,7 +22345,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#put (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#put (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   global.get $~lib/memory/__stack_pointer
@@ -22388,7 +22388,7 @@
   local.get $1
   local.get $2
   local.get $0
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   global.get $~lib/memory/__stack_pointer
   i32.const 12
   i32.add
@@ -22476,7 +22476,7 @@
   local.get $2
   i32.store $0 offset=4
   local.get $2
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#get
   local.tee $4
   i32.eqz
   if
@@ -22522,7 +22522,7 @@
   i32.store $0 offset=8
   local.get $2
   local.get $5
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get
   local.tee $6
   i32.eqz
   if
@@ -22625,7 +22625,7 @@
   i32.const 0
   global.set $~argumentsLength
   global.get $~lib/memory/__stack_pointer
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object#constructor@varargs
+  call $assembly/proto/collections/collections.token_object#constructor@varargs
   local.tee $2
   i32.store $0 offset=16
   loop $for-loop|0
@@ -22698,7 +22698,7 @@
     local.get $9
     local.get $8
     local.get $2
-    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object>#put
+    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>#put
     global.get $~lib/memory/__stack_pointer
     local.set $9
     global.get $~lib/memory/__stack_pointer
@@ -22743,7 +22743,7 @@
     local.get $10
     local.get $11
     local.get $5
-    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#get
+    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get
     local.tee $10
     i32.store $0 offset=28
     local.get $10
@@ -22812,7 +22812,7 @@
     local.get $9
     local.get $5
     local.get $10
-    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#put
+    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#put
     global.get $~lib/memory/__stack_pointer
     local.set $9
     global.get $~lib/memory/__stack_pointer
@@ -23041,7 +23041,7 @@
   local.get $1
   local.get $5
   local.get $6
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#put
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store $0 offset=8
@@ -23117,7 +23117,7 @@
   local.get $5
   local.get $4
   local.get $0
-  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>
+  call $~lib/@koinos/sdk-as/assembly/systemCalls/System.putObject<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>
   global.get $~lib/memory/__stack_pointer
   i32.const 12
   i32.add
@@ -23139,7 +23139,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.burn_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.burn_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -23435,7 +23435,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.transfer_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -24742,7 +24742,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.transfer_event.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.transfer_event.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -25070,7 +25070,7 @@
   local.get $2
   local.get $3
   local.get $8
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get
   local.tee $3
   i32.store $0 offset=24
   global.get $~lib/memory/__stack_pointer
@@ -25379,7 +25379,7 @@
    local.get $2
    local.get $9
    local.get $8
-   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get
+   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get
    local.tee $2
    i32.store $0 offset=40
    local.get $2
@@ -25485,7 +25485,7 @@
     i32.store $0 offset=12
     local.get $9
     local.get $4
-    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object>#get
+    call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object>#get
     local.tee $4
     if
      local.get $4
@@ -25649,7 +25649,7 @@
   i32.store $0 offset=12
   local.get $2
   local.get $5
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get
   local.tee $2
   if (result i32)
    local.get $2
@@ -25825,7 +25825,7 @@
   i32.store $0 offset=12
   local.get $4
   local.get $6
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get
   local.tee $9
   i32.eqz
   if
@@ -25886,7 +25886,7 @@
   local.get $10
   local.get $11
   local.get $5
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get
   local.tee $10
   i32.store $0 offset=64
   local.get $10
@@ -25943,7 +25943,7 @@
   local.get $11
   local.get $4
   local.get $6
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get
   local.tee $4
   i32.store $0 offset=72
   local.get $4
@@ -26232,7 +26232,7 @@
   local.get $10
   i32.store $0 offset=48
   local.get $10
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor
+  call $assembly/proto/collections/collections.tokens_of_result#constructor
   local.set $10
   global.get $~lib/memory/__stack_pointer
   local.get $10
@@ -26240,7 +26240,7 @@
   local.get $4
   local.get $5
   local.get $10
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#put
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store $0 offset=28
@@ -26282,7 +26282,7 @@
   local.get $11
   i32.store $0 offset=48
   local.get $11
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor
+  call $assembly/proto/collections/collections.tokens_of_result#constructor
   local.set $10
   global.get $~lib/memory/__stack_pointer
   local.get $10
@@ -26290,7 +26290,7 @@
   local.get $4
   local.get $6
   local.get $10
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#put
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store $0 offset=28
@@ -26342,7 +26342,7 @@
   local.get $4
   local.get $8
   local.get $3
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>#put
   global.get $~lib/memory/__stack_pointer
   local.tee $3
   local.get $0
@@ -26384,7 +26384,7 @@
   local.get $3
   local.get $6
   local.get $9
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#put
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store $0 offset=20
@@ -26425,7 +26425,7 @@
   local.get $0
   local.get $5
   local.get $2
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#put
   global.get $~lib/memory/__stack_pointer
   local.set $0
   global.get $~lib/memory/__stack_pointer
@@ -26606,7 +26606,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.approve_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.approve_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -27095,7 +27095,7 @@
   local.get $5
   local.get $6
   local.get $4
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get
   local.tee $5
   i32.store $0 offset=24
   global.get $~lib/memory/__stack_pointer
@@ -27231,7 +27231,7 @@
    i32.store $0 offset=12
    local.get $6
    local.get $5
-   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object>#get
+   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object>#get
    local.set $5
    global.get $~lib/memory/__stack_pointer
    i32.const 7728
@@ -27264,7 +27264,7 @@
   i32.store $0 offset=12
   local.get $5
   local.get $2
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object#constructor
+  call $assembly/proto/collections/collections.token_approval_object#constructor
   local.tee $5
   i32.store $0 offset=52
   global.get $~lib/memory/__stack_pointer
@@ -27310,7 +27310,7 @@
   local.get $0
   local.get $4
   local.get $5
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_object>#put
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>#put
   global.get $~lib/memory/__stack_pointer
   local.set $0
   global.get $~lib/memory/__stack_pointer
@@ -27491,7 +27491,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.set_approval_for_all_arguments.decode (param $0 i32) (param $1 i32) (result i32)
+ (func $assembly/proto/collections/collections.set_approval_for_all_arguments.decode (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -27811,7 +27811,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_event.encode (param $0 i32) (param $1 i32)
+ (func $assembly/proto/collections/collections.operator_approval_event.encode (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/memory/__stack_pointer
@@ -28052,7 +28052,7 @@
   i32.const -200
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.require<bool>
   local.get $1
-  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object#constructor
+  call $assembly/proto/collections/collections.operator_approval_object#constructor
   local.set $4
   global.get $~lib/memory/__stack_pointer
   local.get $0
@@ -28558,7 +28558,7 @@
                      i32.const 1264
                      i32.store $0
                      i32.const 1264
-                     call $assembly/proto/kanvasgodscontract/kanvasgodscontract.string_object#constructor
+                     call $assembly/proto/collections/collections.string_object#constructor
                      local.set $1
                      global.get $~lib/memory/__stack_pointer
                      i32.const 4
@@ -28622,7 +28622,7 @@
                     i32.const 1360
                     i32.store $0
                     i32.const 1360
-                    call $assembly/proto/kanvasgodscontract/kanvasgodscontract.string_object#constructor
+                    call $assembly/proto/collections/collections.string_object#constructor
                     local.set $1
                     global.get $~lib/memory/__stack_pointer
                     i32.const 4
@@ -28686,7 +28686,7 @@
                    i32.const 1312
                    i32.store $0
                    i32.const 1312
-                   call $assembly/proto/kanvasgodscontract/kanvasgodscontract.string_object#constructor
+                   call $assembly/proto/collections/collections.string_object#constructor
                    local.set $1
                    global.get $~lib/memory/__stack_pointer
                    i32.const 4
@@ -28773,7 +28773,7 @@
                   i32.const 0
                   global.set $~argumentsLength
                   global.get $~lib/memory/__stack_pointer
-                  call $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor@varargs
+                  call $assembly/proto/collections/collections.address_object#constructor@varargs
                   local.tee $3
                   i32.store $0 offset=12
                   global.get $~lib/memory/__stack_pointer
@@ -28818,7 +28818,7 @@
                   local.get $4
                   local.get $2
                   local.get $0
-                  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get
+                  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get
                   local.tee $0
                   i32.store $0 offset=20
                   local.get $0
@@ -28933,7 +28933,7 @@
                  local.tee $0
                  i32.store $0 offset=8
                  i32.const 0
-                 call $assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object#constructor
+                 call $assembly/proto/collections/collections.operator_approval_object#constructor
                  local.set $1
                  global.get $~lib/memory/__stack_pointer
                  local.get $2
@@ -28987,7 +28987,7 @@
                  i32.store $0 offset=12
                  local.get $4
                  local.get $0
-                 call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.operator_approval_object>#get
+                 call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object>#get
                  local.tee $0
                  if
                   local.get $1
@@ -29080,7 +29080,7 @@
                 local.get $0
                 i32.store $0
                 local.get $0
-                call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+                call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#get
                 local.tee $0
                 i32.eqz
                 if
@@ -29088,7 +29088,7 @@
                 end
                 local.get $0
                 i64.load $0
-                call $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object#constructor
+                call $assembly/proto/collections/collections.balance_object#constructor
                 local.set $0
                 global.get $~lib/memory/__stack_pointer
                 i32.const 8
@@ -29181,7 +29181,7 @@
                i32.store $0
                local.get $1
                local.get $2
-               call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#get
+               call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get
                local.tee $2
                i32.store $0 offset=8
                local.get $2
@@ -29389,7 +29389,7 @@
              i32.store $0
              local.get $1
              local.get $2
-             call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/kanvasgodscontract/kanvasgodscontract.config_object>#get
+             call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get
              local.tee $2
              i32.store $0 offset=8
              local.get $2
@@ -29410,7 +29410,7 @@
              local.tee $1
              i32.store $0 offset=4
              local.get $1
-             call $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor
+             call $assembly/proto/collections/collections.address_object#constructor
              local.set $1
              global.get $~lib/memory/__stack_pointer
              i32.const 16
@@ -29564,7 +29564,7 @@
            i32.store $0 offset=8
            local.get $1
            local.get $0
-           call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object>#get
+           call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get
            local.tee $0
            i32.eqz
            if
@@ -29572,7 +29572,7 @@
            end
            local.get $0
            i64.load $0
-           call $assembly/proto/kanvasgodscontract/kanvasgodscontract.balance_object#constructor
+           call $assembly/proto/collections/collections.balance_object#constructor
            local.set $0
            global.get $~lib/memory/__stack_pointer
            i32.const 16
@@ -29688,7 +29688,7 @@
           local.get $3
           local.get $2
           local.get $0
-          call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result>#get
+          call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get
           local.tee $0
           i32.store $0 offset=24
           local.get $0
@@ -29707,7 +29707,7 @@
           i32.store $0 offset=8
           local.get $3
           local.get $0
-          call $assembly/proto/kanvasgodscontract/kanvasgodscontract.tokens_of_result#constructor
+          call $assembly/proto/collections/collections.tokens_of_result#constructor
           local.tee $0
           i32.store $0 offset=28
           global.get $~lib/memory/__stack_pointer
@@ -29795,7 +29795,7 @@
          i32.const 0
          global.set $~argumentsLength
          global.get $~lib/memory/__stack_pointer
-         call $assembly/proto/kanvasgodscontract/kanvasgodscontract.address_object#constructor@varargs
+         call $assembly/proto/collections/collections.address_object#constructor@varargs
          local.tee $3
          i32.store $0 offset=12
          global.get $~lib/memory/__stack_pointer
@@ -29840,7 +29840,7 @@
          local.get $4
          local.get $2
          local.get $0
-         call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/kanvasgodscontract/kanvasgodscontract.token_approval_object>#get
+         call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object>#get
          local.tee $0
          i32.store $0 offset=20
          local.get $0
