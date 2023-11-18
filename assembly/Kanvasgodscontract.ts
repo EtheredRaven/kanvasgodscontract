@@ -174,7 +174,7 @@ export class Kanvasgodscontract {
 
     const royaltiesEvent = new kanvasgodscontract.royalties_event(royalties);
     System.event(
-      "collections.royalties_event",
+      "kanvasgodscontract.royalties_event",
       Protobuf.encode(
         royaltiesEvent,
         kanvasgodscontract.royalties_event.encode
@@ -220,7 +220,7 @@ export class Kanvasgodscontract {
     this._config.put(config);
 
     System.event(
-      "collections.owner_event",
+      "kanvasgodscontract.owner_event",
       Protobuf.encode(ownerEvent, kanvasgodscontract.owner_event.encode),
       impacted
     );
@@ -388,7 +388,7 @@ export class Kanvasgodscontract {
 
       const impacted = [to];
       System.event(
-        "collections.mint_event",
+        "kanvasgodscontract.mint_event",
         Protobuf.encode(mintEvent, kanvasgodscontract.mint_event.encode),
         impacted
       );
@@ -524,7 +524,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [to, from];
     System.event(
-      "collections.transfer_event",
+      "kanvasgodscontract.transfer_event",
       Protobuf.encode(transferEvent, kanvasgodscontract.transfer_event.encode),
       impacted
     );
@@ -593,7 +593,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [to, approver_address];
     System.event(
-      "collections.token_approval_event",
+      "kanvasgodscontract.token_approval_event",
       Protobuf.encode(
         approvalEvent,
         kanvasgodscontract.token_approval_event.encode
@@ -643,7 +643,7 @@ export class Kanvasgodscontract {
     );
     const impacted = [operator_address, approver_address];
     System.event(
-      "collections.operator_approval_event",
+      "kanvasgodscontract.operator_approval_event",
       Protobuf.encode(
         approvalEvent,
         kanvasgodscontract.operator_approval_event.encode
