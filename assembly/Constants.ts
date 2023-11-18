@@ -9,9 +9,8 @@ export namespace Constants {
   export const URI: string =
     "https://kanvas-app.com/api/kanvas_gods/get_metadata";
 
-  // TODO : A changer
   export const OWNER: Uint8Array = Base58.decode(
-    "1KJzFZ1Gy7H5WdVPnMKAvppmYx6Lj5m5bs"
+    "1KANGodsneBDiXyvGT5fYrfDcZpJCjxRQU"
   );
 
   // token mint
@@ -19,6 +18,6 @@ export namespace Constants {
     "15DJN4a8SgrbGhhGksSBASiSYjGnMU8dGL"
   );
   export const ADDRESS_PAY: Uint8Array = Base58.decode(
-    "1KJzFZ1Gy7H5WdVPnMKAvppmYx6Lj5m5bs"
+    "1KANGodsneBDiXyvGT5fYrfDcZpJCjxRQU"
   );
 }
