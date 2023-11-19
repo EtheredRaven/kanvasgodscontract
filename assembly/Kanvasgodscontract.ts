@@ -34,6 +34,7 @@ export class Kanvasgodscontract {
 
   constructor() {
     this._contractId = System.getContractId();
+
     this._supply = new Storage.Obj(
       this._contractId,
       SUPPLY_SPACE_ID,
@@ -81,7 +82,13 @@ export class Kanvasgodscontract {
       CONFIG_SPACE_ID,
       collections.config_object.decode,
       collections.config_object.encode,
-      () => new collections.config_object(Constants.OWNER, [])
+      () =>
+        new collections.config_object(
+          Constants.OWNER.length == 0
+            ? System.getContractId()
+            : Constants.OWNER,
+          []
+        ) // Default owner to CONSTANTS.OWNER or _contractId if not owner set
     );
   }
 
@@ -276,11 +283,8 @@ export class Kanvasgodscontract {
    * @internal
    * @readonly
    */
-  _get_approved_operator_key(
-    approver: Uint8Array,
-    operator: Uint8Array
-  ): string {
-    return `${Base58.encode(approver)}_${Base58.encode(operator)}`;
+  _get_approved_operator_key(operator: Uint8Array, owner: Uint8Array): string {
+    return `${Base58.encode(operator)}_${Base58.encode(owner)}`;
   }
 
   /**
@@ -295,7 +299,7 @@ export class Kanvasgodscontract {
     const operator = args.operator as Uint8Array;
     const res = new collections.bool_object();
     const approval = this._operators.get(
-      this._get_approved_operator_key(owner, operator)
+      this._get_approved_operator_key(operator, owner)
     );
     if (approval) {
       res.value = approval.approved;
@@ -308,7 +312,8 @@ export class Kanvasgodscontract {
    * @external
    */
   mint(args: collections.mint_arguments): collections.empty_object {
-    const to = Constants.OWNER;
+    const OWNER = this._config.get()!.owner;
+    const to = Constants.MINT_FEE ? args.to : OWNER; // if everyone can mint, then you can take into account args.to, otherwise it is to the owner anyway
 
     // process
     const supply = this._supply.get()!;
@@ -319,16 +324,16 @@ export class Kanvasgodscontract {
     if (Constants.MINT_FEE) {
       const token_pay = new Token(Constants.TOKEN_PAY);
       const _result = token_pay.transfer(
-        to,
+        args.to,
         Constants.ADDRESS_PAY,
         SafeMath.mul(args.number_tokens_to_mint, Constants.MINT_PRICE)
       );
       System.require(_result, "Failed to pay mint");
-    } else if (Constants.OWNER.length > 0) {
+    } else if (OWNER.length > 0) {
       // if OWNER is setup
       System.requireAuthority(
         authority.authorization_type.contract_call,
-        Constants.OWNER
+        OWNER
       );
     } else {
       // otherwise, check contract id permissions
@@ -434,7 +439,7 @@ export class Kanvasgodscontract {
       }
       if (!isTokenApproved) {
         const operatorApproval = this._operators.get(
-          this._get_approved_operator_key(token!.owner, caller.caller)
+          this._get_approved_operator_key(caller.caller, token!.owner)
         );
         if (operatorApproval) {
           isTokenApproved = operatorApproval.approved;
@@ -537,7 +542,7 @@ export class Kanvasgodscontract {
     // check that the approver_address is allowed to approve the token
     if (!Arrays.equal(token!.owner, approver_address)) {
       let approval = this._operators.get(
-        this._get_approved_operator_key(token!.owner, approver_address)
+        this._get_approved_operator_key(approver_address, token!.owner)
       );
       System.require(
         approval != null,
@@ -625,15 +630,9 @@ export class Kanvasgodscontract {
    * Helpers
    */
   _checkOwner(config: collections.config_object): void {
-    let currentOwner: Uint8Array;
-    if (config.owner.length) {
-      currentOwner = config.owner;
-    } else {
-      currentOwner = Constants.OWNER;
-    }
     System.requireAuthority(
       authority.authorization_type.contract_call,
-      currentOwner
+      config.owner
     );
   }
 }

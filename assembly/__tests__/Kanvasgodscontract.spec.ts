@@ -3,10 +3,12 @@ import {
   MockVM,
   Arrays,
   Protobuf,
+  StringBytes,
   authority,
   chain,
 } from "@koinos/sdk-as";
 import { Kanvasgodscontract } from "../Kanvasgodscontract";
+import { Constants } from "../Constants";
 import { collections } from "../proto/collections";
 
 const CONTRACT_ID = Base58.decode("1KANGodsneBDiXyvGT5fYrfDcZpJCjxRQU");
@@ -14,17 +16,9 @@ const MOCK_ACCT1 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqG");
 const MOCK_ACCT2 = Base58.decode("1DQzuCcTKacbs9GGScRTU1Hc8BsyARTPqK");
 const CONTRACT_EMPTY = Base58.decode("");
 
-function numToUint8Array(num: number): Uint8Array {
-  let arr = new Uint8Array(8);
-
-  for (let i = 0; i < 8; i++) {
-    arr[i] = (num % 256) as u32;
-    num = Math.floor(num / 256);
-  }
-
-  return arr;
-}
-const FIRST_TOKEN_ID = numToUint8Array(1);
+const FIRST_TOKEN_ID = StringBytes.stringToBytes("1");
+const SECOND_TOKEN_ID = StringBytes.stringToBytes("2");
+const THIRD_TOKEN_ID = StringBytes.stringToBytes("3");
 
 describe("token", () => {
   beforeEach(() => {
@@ -33,12 +27,14 @@ describe("token", () => {
     MockVM.setCaller(
       new chain.caller_data(new Uint8Array(0), chain.privilege.user_mode)
     );
-    const auth = new MockVM.MockAuthority(
+
+    const authContractId = new MockVM.MockAuthority(
       authority.authorization_type.contract_call,
       CONTRACT_ID,
       true
     );
-    MockVM.setAuthorities([auth]);
+
+    MockVM.setAuthorities([authContractId]);
   });
 
   it("should get the name", () => {
@@ -70,6 +66,112 @@ describe("token", () => {
     );
   });
 
+  it("should get owner", () => {
+    const contract = new Kanvasgodscontract();
+    expect(
+      Arrays.equal(
+        contract.owner(new collections.owner_arguments()).value,
+        Constants.OWNER
+      )
+    ).toBe(true);
+  });
+
+  it("should not/transfer ownership", () => {
+    const contract = new Kanvasgodscontract();
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        MOCK_ACCT1,
+        true
+      ),
+    ]);
+
+    expect(() => {
+      const contract = new Kanvasgodscontract();
+      contract.transfer_ownership(
+        new collections.transfer_ownership_arguments(MOCK_ACCT1)
+      );
+    }).toThrow();
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        CONTRACT_ID,
+        true
+      ),
+    ]);
+
+    contract.transfer_ownership(
+      new collections.transfer_ownership_arguments(MOCK_ACCT1)
+    );
+
+    expect(
+      Arrays.equal(
+        contract.owner(new collections.owner_arguments()).value,
+        MOCK_ACCT1
+      )
+    ).toBe(true);
+  });
+
+  it("should get royalties", () => {
+    const contract = new Kanvasgodscontract();
+    expect(
+      contract.royalties(new collections.royalties_arguments()).value.length
+    ).toBe(0);
+  });
+
+  it("should not/set royalties", () => {
+    const contract = new Kanvasgodscontract();
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        MOCK_ACCT1,
+        true
+      ),
+    ]);
+
+    expect(() => {
+      const contract = new Kanvasgodscontract();
+      contract.set_royalties(
+        new collections.set_royalties_arguments([
+          new collections.royalty_object(1000, MOCK_ACCT1),
+        ])
+      );
+    }).toThrow();
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        CONTRACT_ID,
+        true
+      ),
+    ]);
+    contract.transfer_ownership(
+      new collections.transfer_ownership_arguments(MOCK_ACCT1)
+    );
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        MOCK_ACCT1,
+        true
+      ),
+    ]);
+    contract.set_royalties(
+      new collections.set_royalties_arguments([
+        new collections.royalty_object(1000, MOCK_ACCT1),
+      ])
+    );
+
+    const royaltiesRes = contract.royalties(
+      new collections.royalties_arguments()
+    );
+    expect(royaltiesRes.value.length).toBe(1);
+    expect(royaltiesRes.value[0].amount).toBe(1000);
+    expect(Arrays.equal(royaltiesRes.value[0].address, MOCK_ACCT1)).toBe(true);
+  });
+
   it("should mint tokens", () => {
     const tkn = new Kanvasgodscontract();
 
@@ -99,7 +201,7 @@ describe("token", () => {
     expect(tokensOfRes.token_id[2]).toBe("3");
   });
 
-  it("should not mint tokens if not contract account", () => {
+  it("should not mint tokens if not owner account", () => {
     const tkn = new Kanvasgodscontract();
     const auth = new MockVM.MockAuthority(
       authority.authorization_type.contract_call,
@@ -142,12 +244,8 @@ describe("token", () => {
     expect(totalSupplyRes.value).toBe(0);
   });
 
-  /*
   it("should transfer tokens", () => {
     const tkn = new Kanvasgodscontract();
-
-    MockVM.setContractArguments(new Uint8Array(0));
-    MockVM.setEntryPoint(1);
 
     // set contract_call authority for CONTRACT_ID to true so that we can mint tokens
     const authContractId = new MockVM.MockAuthority(
@@ -163,6 +261,9 @@ describe("token", () => {
     );
     MockVM.setAuthorities([authContractId, authMockAcct1]);
 
+    MockVM.setContractArguments(new Uint8Array(0));
+    MockVM.setEntryPoint(1);
+
     // set caller before mint
     MockVM.setCaller(
       new chain.caller_data(CONTRACT_ID, chain.privilege.user_mode)
@@ -172,6 +273,14 @@ describe("token", () => {
     const mintArgs = new collections.mint_arguments(CONTRACT_ID, 3);
     tkn.mint(mintArgs);
 
+    // Check owner
+    expect(
+      Arrays.equal(
+        tkn.owner_of(new collections.owner_of_arguments(FIRST_TOKEN_ID)).value,
+        CONTRACT_ID
+      )
+    ).toBe(true);
+
     // transfer tokens
     const transferArgs = new collections.transfer_arguments(
       CONTRACT_ID,
@@ -179,6 +288,14 @@ describe("token", () => {
       FIRST_TOKEN_ID
     );
     tkn.transfer(transferArgs);
+
+    // Check new owner
+    expect(
+      Arrays.equal(
+        tkn.owner_of(new collections.owner_of_arguments(FIRST_TOKEN_ID)).value,
+        MOCK_ACCT1
+      )
+    ).toBe(true);
 
     // check balances
     let balanceArgs = new collections.balance_of_arguments(CONTRACT_ID);
@@ -189,9 +306,7 @@ describe("token", () => {
     balanceRes = tkn.balance_of(balanceArgs);
     expect(balanceRes.value).toBe(1);
 
-    let tokensOfFromArgs = new collections.tokens_of_arguments(
-      CONTRACT_ID
-    );
+    let tokensOfFromArgs = new collections.tokens_of_arguments(CONTRACT_ID);
     let tokensOfFromRes = tkn.tokens_of(tokensOfFromArgs);
     expect(tokensOfFromRes.token_id.length).toBe(2);
     expect(tokensOfFromRes.token_id[0]).toBe("2");
@@ -200,34 +315,154 @@ describe("token", () => {
     let tokensOfToArgs = new collections.tokens_of_arguments(MOCK_ACCT1);
     let tokensOfToRes = tkn.tokens_of(tokensOfToArgs);
     expect(tokensOfToRes.token_id.length).toBe(1);
-    expect(tokensOfFromRes.token_id[0]).toBe("1");
-  });*/
+    expect(tokensOfToRes.token_id[0]).toBe("1");
+  });
 
-  /*it("should get approval", () => {
-    const tkn = new Kanvasgodscontract();
+  it("should get approved and not/transfer if not/approved", () => {
+    const contract = new Kanvasgodscontract();
+    MockVM.setCaller(
+      new chain.caller_data(CONTRACT_ID, chain.privilege.user_mode)
+    );
 
-    const args = new collections.get_approved_arguments(FIRST_TOKEN_ID);
-    const res = tkn.get_approved(args);
+    contract.mint(new collections.mint_arguments(CONTRACT_ID, 5));
 
-    expect(res.value).toBe(null);
+    contract.transfer(
+      new collections.transfer_arguments(
+        CONTRACT_ID,
+        MOCK_ACCT1,
+        FIRST_TOKEN_ID
+      )
+    );
 
+    expect(
+      Arrays.equal(
+        contract.owner_of(new collections.owner_of_arguments(FIRST_TOKEN_ID))
+          .value,
+        MOCK_ACCT1
+      )
+    ).toBe(true);
+
+    MockVM.commitTransaction();
+    expect(() => {
+      const contract = new Kanvasgodscontract();
+      contract.transfer(
+        new collections.transfer_arguments(
+          MOCK_ACCT1,
+          CONTRACT_ID,
+          FIRST_TOKEN_ID
+        )
+      );
+    }).toThrow();
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        MOCK_ACCT1,
+        true
+      ),
+    ]);
+    contract.approve(
+      new collections.approve_arguments(MOCK_ACCT1, CONTRACT_ID, FIRST_TOKEN_ID)
+    );
+    expect(
+      Arrays.equal(
+        contract.get_approved(
+          new collections.get_approved_arguments(FIRST_TOKEN_ID)
+        ).value,
+        CONTRACT_ID
+      )
+    ).toBe(true);
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        CONTRACT_ID,
+        true
+      ),
+    ]);
+    contract.transfer(
+      new collections.transfer_arguments(
+        MOCK_ACCT1,
+        CONTRACT_ID,
+        FIRST_TOKEN_ID
+      )
+    );
+
+    expect(
+      Arrays.equal(
+        contract.owner_of(new collections.owner_of_arguments(FIRST_TOKEN_ID))
+          .value,
+        CONTRACT_ID
+      )
+    ).toBe(true);
+  });
+
+  it("should throw set approval for all if not authorized", () => {
+    MockVM.setCaller(
+      new chain.caller_data(CONTRACT_ID, chain.privilege.user_mode)
+    );
+    expect(() => {
+      const contract = new Kanvasgodscontract();
+      contract.set_approval_for_all(
+        new collections.set_approval_for_all_arguments(
+          MOCK_ACCT1,
+          CONTRACT_ID,
+          true
+        )
+      );
+    }).toThrow();
+  });
+
+  it("should get operator approval and not/transfer if not/operator approval", () => {
+    const contract = new Kanvasgodscontract();
+    MockVM.setCaller(
+      new chain.caller_data(CONTRACT_ID, chain.privilege.user_mode)
+    );
+
+    contract.mint(new collections.mint_arguments(CONTRACT_ID, 5));
+    expect(
+      contract.is_approved_for_all(
+        new collections.is_approved_for_all_arguments(CONTRACT_ID, MOCK_ACCT1)
+      ).value
+    ).toBe(false);
+
+    contract.set_approval_for_all(
+      new collections.set_approval_for_all_arguments(
+        CONTRACT_ID,
+        MOCK_ACCT1,
+        true
+      )
+    );
+
+    expect(
+      contract.is_approved_for_all(
+        new collections.is_approved_for_all_arguments(CONTRACT_ID, MOCK_ACCT1)
+      ).value
+    ).toBe(true);
+
+    MockVM.setAuthorities([
+      new MockVM.MockAuthority(
+        authority.authorization_type.contract_call,
+        MOCK_ACCT1,
+        true
+      ),
+    ]);
     MockVM.setCaller(
       new chain.caller_data(MOCK_ACCT1, chain.privilege.user_mode)
     );
-
-    const approveArgs = new collections.approve_arguments(
-      MOCK_ACCT1,
-      CONTRACT_ID,
-      500
+    contract.transfer(
+      new collections.transfer_arguments(
+        CONTRACT_ID,
+        MOCK_ACCT1,
+        FIRST_TOKEN_ID
+      )
     );
-    tkn.approve(approveArgs);
-
-    // Check allowance
-    let allowanceArgs = new kanvascontract.allowance_arguments(
-      MOCK_ACCT1,
-      CONTRACT_ID
+    contract.transfer(
+      new collections.transfer_arguments(
+        CONTRACT_ID,
+        MOCK_ACCT1,
+        SECOND_TOKEN_ID
+      )
     );
-    let allowanceRes = tkn.allowance(allowanceArgs);
-    expect(allowanceRes.value).toBe(500);
-  });*/
+  });
 });
