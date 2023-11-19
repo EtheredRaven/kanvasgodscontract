@@ -3,9 +3,9 @@
  (type $i32_=>_i32 (func (param i32) (result i32)))
  (type $i32_i32_=>_i32 (func (param i32 i32) (result i32)))
  (type $i32_i32_i32_=>_i32 (func (param i32 i32 i32) (result i32)))
- (type $i32_i32_i32_=>_none (func (param i32 i32 i32)))
  (type $i32_=>_none (func (param i32)))
  (type $i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32) (result i32)))
+ (type $i32_i32_i32_=>_none (func (param i32 i32 i32)))
  (type $none_=>_i32 (func (result i32)))
  (type $none_=>_none (func))
  (type $i32_i64_=>_none (func (param i32 i64)))
@@ -44,7 +44,6 @@
  (global $~lib/rt/itcms/fromSpace (mut i32) (i32.const 0))
  (global $~lib/rt/tlsf/ROOT (mut i32) (i32.const 0))
  (global $~lib/native/ASC_LOW_MEMORY_LIMIT i32 (i32.const 0))
- (global $~lib/native/ASC_SHRINK_LEVEL i32 (i32.const 0))
  (global $~lib/native/ASC_RUNTIME i32 (i32.const 2))
  (global $~lib/as-proto/assembly/Protobuf/WRITER (mut i32) (i32.const 0))
  (global $~lib/as-proto/assembly/Protobuf/READER (mut i32) (i32.const 0))
@@ -191,25 +190,25 @@
  (global $assembly/Constants/Constants.MAX_SUPPLY i64 (i64.const 1000))
  (global $assembly/Constants/Constants.URI i32 (i32.const 352))
  (global $~lib/@koinos/sdk-as/assembly/util/base58/Base58.ALPHABET i32 (i32.const 576))
+ (global $~lib/native/ASC_SHRINK_LEVEL i32 (i32.const 0))
  (global $~lib/@koinos/sdk-as/assembly/util/base58/Base58.BASE_MAP (mut i32) (i32.const 0))
  (global $~lib/@koinos/sdk-as/assembly/util/base58/Base58.BASE i32 (i32.const 58))
  (global $~lib/builtins/i32.MAX_VALUE i32 (i32.const 2147483647))
  (global $assembly/Constants/Constants.OWNER (mut i32) (i32.const 0))
  (global $assembly/Constants/Constants.TOKEN_PAY (mut i32) (i32.const 0))
  (global $assembly/Constants/Constants.ADDRESS_PAY (mut i32) (i32.const 0))
- (global $assembly/Kanvasgodscontract/TOKENS_SPACE_ID i32 (i32.const 18))
- (global $assembly/Kanvasgodscontract/BALANCES_SPACE_ID i32 (i32.const 19))
- (global $assembly/Kanvasgodscontract/APPROVALS_SPACE_ID i32 (i32.const 20))
- (global $assembly/Kanvasgodscontract/OPERATORS_SPACE_ID i32 (i32.const 21))
- (global $assembly/Kanvasgodscontract/TOKEN_OF_SPACE_ID i32 (i32.const 22))
- (global $assembly/Kanvasgodscontract/SUPPLY_SPACE_ID i32 (i32.const 23))
- (global $assembly/Kanvasgodscontract/CONFIG_SPACE_ID i32 (i32.const 24))
+ (global $assembly/Collections/TOKENS_SPACE_ID i32 (i32.const 18))
+ (global $assembly/Collections/BALANCES_SPACE_ID i32 (i32.const 19))
+ (global $assembly/Collections/APPROVALS_SPACE_ID i32 (i32.const 20))
+ (global $assembly/Collections/OPERATORS_SPACE_ID i32 (i32.const 21))
+ (global $assembly/Collections/TOKEN_OF_SPACE_ID i32 (i32.const 22))
+ (global $assembly/Collections/SUPPLY_SPACE_ID i32 (i32.const 23))
+ (global $assembly/Collections/CONFIG_SPACE_ID i32 (i32.const 24))
  (global $~lib/builtins/u32.MAX_VALUE i32 (i32.const -1))
  (global $~lib/rt/__rtti_base i32 (i32.const 7232))
  (global $~lib/memory/__data_end i32 (i32.const 7760))
  (global $~lib/memory/__stack_pointer (mut i32) (i32.const 40528))
  (global $~lib/memory/__heap_base i32 (i32.const 40528))
- (global $~started (mut i32) (i32.const 0))
  (memory $0 1)
  (data $0 (i32.const 16) "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
  (data $1 (i32.const 48) "\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
@@ -331,10 +330,10 @@
  (data $117 (i32.const 7196) "\1c\00\00\00\00\00\00\00\00\00\00\00\82\00\00\00\08\00\00\00=\00\00\00\00\00\00\00\00\00\00\00")
  (data $118 (i32.const 7232) "\83\00\00\00 \00\00\00 \00\00\00 \00\00\00\00\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\02\01\00\00\02\t\00\00A\00\00\00\00\00\00\00 \00\00\00\00\00\00\00\01\01\00\00B\00\00\00d\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\04A\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\02A\00\00 \00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00")
  (table $0 62 62 funcref)
- (elem $0 (i32.const 1) $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/collections/collections.balance_object.decode $assembly/proto/collections/collections.balance_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 $assembly/proto/collections/collections.token_object.decode $assembly/proto/collections/collections.token_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|1 $assembly/proto/collections/collections.token_approval_object.decode $assembly/proto/collections/collections.token_approval_object.encode $assembly/proto/collections/collections.operator_approval_object.decode $assembly/proto/collections/collections.operator_approval_object.encode $assembly/proto/collections/collections.tokens_of_result.decode $assembly/proto/collections/collections.tokens_of_result.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|2 $assembly/proto/collections/collections.config_object.decode $assembly/proto/collections/collections.config_object.encode $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|3 $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.string_object.encode $assembly/proto/collections/collections.uri_arguments.decode $assembly/proto/collections/collections.symbol_arguments.decode $assembly/proto/collections/collections.get_approved_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result.decode $assembly/proto/collections/collections.address_object.encode $assembly/proto/collections/collections.is_approved_for_all_arguments.decode $assembly/proto/collections/collections.bool_object.encode $assembly/proto/collections/collections.total_supply_arguments.decode $assembly/proto/collections/collections.uint64_object.encode $assembly/proto/collections/collections.royalties_arguments.decode $assembly/proto/collections/collections.royalties_result.encode $assembly/proto/collections/collections.set_royalties_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments.encode $assembly/proto/collections/collections.royalties_event.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments.encode $assembly/proto/collections/collections.empty_object.encode $assembly/proto/collections/collections.owner_arguments.decode $assembly/proto/collections/collections.transfer_ownership_arguments.decode $assembly/proto/collections/collections.owner_event.encode $assembly/proto/collections/collections.balance_of_arguments.decode $assembly/proto/collections/collections.tokens_of_arguments.decode $assembly/proto/collections/collections.owner_of_arguments.decode $assembly/proto/collections/collections.mint_arguments.decode $assembly/proto/collections/collections.mint_event.encode $assembly/proto/collections/collections.burn_arguments.decode $assembly/proto/collections/collections.transfer_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments.encode $assembly/proto/collections/collections.transfer_event.encode $assembly/proto/collections/collections.approve_arguments.decode $assembly/proto/collections/collections.token_approval_event.encode $assembly/proto/collections/collections.set_approval_for_all_arguments.decode $assembly/proto/collections/collections.operator_approval_event.encode)
+ (elem $0 (i32.const 1) $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result.decode $assembly/proto/collections/collections.balance_object.decode $assembly/proto/collections/collections.balance_object.encode $assembly/Collections/Collections#constructor~anonymous|0 $assembly/proto/collections/collections.token_object.decode $assembly/proto/collections/collections.token_object.encode $assembly/Collections/Collections#constructor~anonymous|1 $assembly/proto/collections/collections.token_approval_object.decode $assembly/proto/collections/collections.token_approval_object.encode $assembly/proto/collections/collections.operator_approval_object.decode $assembly/proto/collections/collections.operator_approval_object.encode $assembly/proto/collections/collections.tokens_of_result.decode $assembly/proto/collections/collections.tokens_of_result.encode $assembly/Collections/Collections#constructor~anonymous|2 $assembly/proto/collections/collections.config_object.decode $assembly/proto/collections/collections.config_object.encode $assembly/Collections/Collections#constructor~anonymous|3 $assembly/proto/collections/collections.name_arguments.decode $assembly/proto/collections/collections.string_object.encode $assembly/proto/collections/collections.uri_arguments.decode $assembly/proto/collections/collections.symbol_arguments.decode $assembly/proto/collections/collections.get_approved_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result.decode $assembly/proto/collections/collections.address_object.encode $assembly/proto/collections/collections.is_approved_for_all_arguments.decode $assembly/proto/collections/collections.bool_object.encode $assembly/proto/collections/collections.total_supply_arguments.decode $assembly/proto/collections/collections.uint64_object.encode $assembly/proto/collections/collections.royalties_arguments.decode $assembly/proto/collections/collections.royalties_result.encode $assembly/proto/collections/collections.set_royalties_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments.encode $assembly/proto/collections/collections.royalties_event.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments.encode $assembly/proto/collections/collections.empty_object.encode $assembly/proto/collections/collections.owner_arguments.decode $assembly/proto/collections/collections.transfer_ownership_arguments.decode $assembly/proto/collections/collections.owner_event.encode $assembly/proto/collections/collections.balance_of_arguments.decode $assembly/proto/collections/collections.tokens_of_arguments.decode $assembly/proto/collections/collections.owner_of_arguments.decode $assembly/proto/collections/collections.mint_arguments.decode $assembly/proto/collections/collections.mint_event.encode $assembly/proto/collections/collections.burn_arguments.decode $assembly/proto/collections/collections.transfer_arguments.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_arguments.encode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result.decode $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments.encode $assembly/proto/collections/collections.transfer_event.encode $assembly/proto/collections/collections.approve_arguments.decode $assembly/proto/collections/collections.token_approval_event.encode $assembly/proto/collections/collections.set_approval_for_all_arguments.decode $assembly/proto/collections/collections.operator_approval_event.encode)
  (export "main" (func $assembly/index/main))
  (export "memory" (memory $0))
- (export "_start" (func $~start))
+ (start $~start)
  (func $~lib/rt/itcms/Object#set:nextWithColor (param $this i32) (param $nextWithColor i32)
   local.get $this
   local.get $nextWithColor
@@ -2357,234 +2356,6 @@
   local.get $rtSize
   i32.store $0 offset=16
  )
- (func $~lib/memory/memory.fill (param $dst i32) (param $c i32) (param $n i32)
-  (local $dest i32)
-  (local $c|4 i32)
-  (local $n|5 i32)
-  (local $dend i32)
-  (local $k i32)
-  (local $c32 i32)
-  (local $c64 i64)
-  block $~lib/util/memory/memset|inlined.0
-   local.get $dst
-   local.set $dest
-   local.get $c
-   local.set $c|4
-   local.get $n
-   local.set $n|5
-   i32.const 0
-   i32.const 1
-   i32.gt_s
-   drop
-   local.get $n|5
-   i32.eqz
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   local.get $dest
-   local.get $n|5
-   i32.add
-   local.set $dend
-   local.get $dest
-   local.get $c|4
-   i32.store8 $0
-   local.get $dend
-   i32.const 1
-   i32.sub
-   local.get $c|4
-   i32.store8 $0
-   local.get $n|5
-   i32.const 2
-   i32.le_u
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   local.get $dest
-   local.get $c|4
-   i32.store8 $0 offset=1
-   local.get $dest
-   local.get $c|4
-   i32.store8 $0 offset=2
-   local.get $dend
-   i32.const 2
-   i32.sub
-   local.get $c|4
-   i32.store8 $0
-   local.get $dend
-   i32.const 3
-   i32.sub
-   local.get $c|4
-   i32.store8 $0
-   local.get $n|5
-   i32.const 6
-   i32.le_u
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   local.get $dest
-   local.get $c|4
-   i32.store8 $0 offset=3
-   local.get $dend
-   i32.const 4
-   i32.sub
-   local.get $c|4
-   i32.store8 $0
-   local.get $n|5
-   i32.const 8
-   i32.le_u
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   i32.const 0
-   local.get $dest
-   i32.sub
-   i32.const 3
-   i32.and
-   local.set $k
-   local.get $dest
-   local.get $k
-   i32.add
-   local.set $dest
-   local.get $n|5
-   local.get $k
-   i32.sub
-   local.set $n|5
-   local.get $n|5
-   i32.const -4
-   i32.and
-   local.set $n|5
-   i32.const -1
-   i32.const 255
-   i32.div_u
-   local.get $c|4
-   i32.const 255
-   i32.and
-   i32.mul
-   local.set $c32
-   local.get $dest
-   local.get $n|5
-   i32.add
-   local.set $dend
-   local.get $dest
-   local.get $c32
-   i32.store $0
-   local.get $dend
-   i32.const 4
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $n|5
-   i32.const 8
-   i32.le_u
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=4
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=8
-   local.get $dend
-   i32.const 12
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $dend
-   i32.const 8
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $n|5
-   i32.const 24
-   i32.le_u
-   if
-    br $~lib/util/memory/memset|inlined.0
-   end
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=12
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=16
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=20
-   local.get $dest
-   local.get $c32
-   i32.store $0 offset=24
-   local.get $dend
-   i32.const 28
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $dend
-   i32.const 24
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $dend
-   i32.const 20
-   i32.sub
-   local.get $c32
-   i32.store $0
-   local.get $dend
-   i32.const 16
-   i32.sub
-   local.get $c32
-   i32.store $0
-   i32.const 24
-   local.get $dest
-   i32.const 4
-   i32.and
-   i32.add
-   local.set $k
-   local.get $dest
-   local.get $k
-   i32.add
-   local.set $dest
-   local.get $n|5
-   local.get $k
-   i32.sub
-   local.set $n|5
-   local.get $c32
-   i64.extend_i32_u
-   local.get $c32
-   i64.extend_i32_u
-   i64.const 32
-   i64.shl
-   i64.or
-   local.set $c64
-   loop $while-continue|0
-    local.get $n|5
-    i32.const 32
-    i32.ge_u
-    if
-     local.get $dest
-     local.get $c64
-     i64.store $0
-     local.get $dest
-     local.get $c64
-     i64.store $0 offset=8
-     local.get $dest
-     local.get $c64
-     i64.store $0 offset=16
-     local.get $dest
-     local.get $c64
-     i64.store $0 offset=24
-     local.get $n|5
-     i32.const 32
-     i32.sub
-     local.set $n|5
-     local.get $dest
-     i32.const 32
-     i32.add
-     local.set $dest
-     br $while-continue|0
-    end
-   end
-  end
- )
  (func $~lib/rt/itcms/__new (param $size i32) (param $id i32) (result i32)
   (local $obj i32)
   (local $ptr i32)
@@ -2629,7 +2400,7 @@
   local.get $ptr
   i32.const 0
   local.get $size
-  call $~lib/memory/memory.fill
+  memory.fill $0
   local.get $ptr
   return
  )
@@ -2637,1316 +2408,6 @@
   local.get $this
   local.get $len
   i32.store $0
- )
- (func $~lib/util/memory/memcpy (param $dest i32) (param $src i32) (param $n i32)
-  (local $w i32)
-  (local $x i32)
-  (local $5 i32)
-  (local $6 i32)
-  (local $7 i32)
-  (local $8 i32)
-  (local $9 i32)
-  (local $10 i32)
-  (local $11 i32)
-  (local $12 i32)
-  (local $13 i32)
-  (local $14 i32)
-  (local $15 i32)
-  (local $16 i32)
-  (local $17 i32)
-  (local $18 i32)
-  (local $19 i32)
-  (local $20 i32)
-  (local $21 i32)
-  (local $22 i32)
-  (local $23 i32)
-  (local $24 i32)
-  (local $25 i32)
-  (local $26 i32)
-  (local $27 i32)
-  (local $28 i32)
-  (local $29 i32)
-  (local $30 i32)
-  (local $31 i32)
-  (local $32 i32)
-  (local $33 i32)
-  (local $34 i32)
-  (local $35 i32)
-  (local $36 i32)
-  (local $37 i32)
-  (local $38 i32)
-  (local $39 i32)
-  (local $40 i32)
-  (local $41 i32)
-  (local $42 i32)
-  (local $43 i32)
-  (local $44 i32)
-  (local $45 i32)
-  (local $46 i32)
-  (local $47 i32)
-  (local $48 i32)
-  (local $49 i32)
-  (local $50 i32)
-  (local $51 i32)
-  (local $52 i32)
-  (local $53 i32)
-  (local $54 i32)
-  (local $55 i32)
-  (local $56 i32)
-  (local $57 i32)
-  (local $58 i32)
-  (local $59 i32)
-  (local $60 i32)
-  (local $61 i32)
-  (local $62 i32)
-  (local $63 i32)
-  (local $64 i32)
-  (local $65 i32)
-  (local $66 i32)
-  (local $67 i32)
-  (local $68 i32)
-  (local $69 i32)
-  (local $70 i32)
-  (local $71 i32)
-  (local $72 i32)
-  (local $73 i32)
-  (local $74 i32)
-  (local $75 i32)
-  (local $76 i32)
-  (local $77 i32)
-  (local $78 i32)
-  (local $79 i32)
-  (local $80 i32)
-  (local $81 i32)
-  (local $82 i32)
-  (local $83 i32)
-  loop $while-continue|0
-   local.get $n
-   if (result i32)
-    local.get $src
-    i32.const 3
-    i32.and
-   else
-    i32.const 0
-   end
-   if
-    local.get $dest
-    local.tee $5
-    i32.const 1
-    i32.add
-    local.set $dest
-    local.get $5
-    local.get $src
-    local.tee $6
-    i32.const 1
-    i32.add
-    local.set $src
-    local.get $6
-    i32.load8_u $0
-    i32.store8 $0
-    local.get $n
-    i32.const 1
-    i32.sub
-    local.set $n
-    br $while-continue|0
-   end
-  end
-  local.get $dest
-  i32.const 3
-  i32.and
-  i32.const 0
-  i32.eq
-  if
-   loop $while-continue|1
-    local.get $n
-    i32.const 16
-    i32.ge_u
-    if
-     local.get $dest
-     local.get $src
-     i32.load $0
-     i32.store $0
-     local.get $dest
-     i32.const 4
-     i32.add
-     local.get $src
-     i32.const 4
-     i32.add
-     i32.load $0
-     i32.store $0
-     local.get $dest
-     i32.const 8
-     i32.add
-     local.get $src
-     i32.const 8
-     i32.add
-     i32.load $0
-     i32.store $0
-     local.get $dest
-     i32.const 12
-     i32.add
-     local.get $src
-     i32.const 12
-     i32.add
-     i32.load $0
-     i32.store $0
-     local.get $src
-     i32.const 16
-     i32.add
-     local.set $src
-     local.get $dest
-     i32.const 16
-     i32.add
-     local.set $dest
-     local.get $n
-     i32.const 16
-     i32.sub
-     local.set $n
-     br $while-continue|1
-    end
-   end
-   local.get $n
-   i32.const 8
-   i32.and
-   if
-    local.get $dest
-    local.get $src
-    i32.load $0
-    i32.store $0
-    local.get $dest
-    i32.const 4
-    i32.add
-    local.get $src
-    i32.const 4
-    i32.add
-    i32.load $0
-    i32.store $0
-    local.get $dest
-    i32.const 8
-    i32.add
-    local.set $dest
-    local.get $src
-    i32.const 8
-    i32.add
-    local.set $src
-   end
-   local.get $n
-   i32.const 4
-   i32.and
-   if
-    local.get $dest
-    local.get $src
-    i32.load $0
-    i32.store $0
-    local.get $dest
-    i32.const 4
-    i32.add
-    local.set $dest
-    local.get $src
-    i32.const 4
-    i32.add
-    local.set $src
-   end
-   local.get $n
-   i32.const 2
-   i32.and
-   if
-    local.get $dest
-    local.get $src
-    i32.load16_u $0
-    i32.store16 $0
-    local.get $dest
-    i32.const 2
-    i32.add
-    local.set $dest
-    local.get $src
-    i32.const 2
-    i32.add
-    local.set $src
-   end
-   local.get $n
-   i32.const 1
-   i32.and
-   if
-    local.get $dest
-    local.tee $7
-    i32.const 1
-    i32.add
-    local.set $dest
-    local.get $7
-    local.get $src
-    local.tee $8
-    i32.const 1
-    i32.add
-    local.set $src
-    local.get $8
-    i32.load8_u $0
-    i32.store8 $0
-   end
-   return
-  end
-  local.get $n
-  i32.const 32
-  i32.ge_u
-  if
-   block $break|2
-    block $case2|2
-     block $case1|2
-      block $case0|2
-       local.get $dest
-       i32.const 3
-       i32.and
-       local.set $9
-       local.get $9
-       i32.const 1
-       i32.eq
-       br_if $case0|2
-       local.get $9
-       i32.const 2
-       i32.eq
-       br_if $case1|2
-       local.get $9
-       i32.const 3
-       i32.eq
-       br_if $case2|2
-       br $break|2
-      end
-      local.get $src
-      i32.load $0
-      local.set $w
-      local.get $dest
-      local.tee $10
-      i32.const 1
-      i32.add
-      local.set $dest
-      local.get $10
-      local.get $src
-      local.tee $11
-      i32.const 1
-      i32.add
-      local.set $src
-      local.get $11
-      i32.load8_u $0
-      i32.store8 $0
-      local.get $dest
-      local.tee $12
-      i32.const 1
-      i32.add
-      local.set $dest
-      local.get $12
-      local.get $src
-      local.tee $13
-      i32.const 1
-      i32.add
-      local.set $src
-      local.get $13
-      i32.load8_u $0
-      i32.store8 $0
-      local.get $dest
-      local.tee $14
-      i32.const 1
-      i32.add
-      local.set $dest
-      local.get $14
-      local.get $src
-      local.tee $15
-      i32.const 1
-      i32.add
-      local.set $src
-      local.get $15
-      i32.load8_u $0
-      i32.store8 $0
-      local.get $n
-      i32.const 3
-      i32.sub
-      local.set $n
-      loop $while-continue|3
-       local.get $n
-       i32.const 17
-       i32.ge_u
-       if
-        local.get $src
-        i32.const 1
-        i32.add
-        i32.load $0
-        local.set $x
-        local.get $dest
-        local.get $w
-        i32.const 24
-        i32.shr_u
-        local.get $x
-        i32.const 8
-        i32.shl
-        i32.or
-        i32.store $0
-        local.get $src
-        i32.const 5
-        i32.add
-        i32.load $0
-        local.set $w
-        local.get $dest
-        i32.const 4
-        i32.add
-        local.get $x
-        i32.const 24
-        i32.shr_u
-        local.get $w
-        i32.const 8
-        i32.shl
-        i32.or
-        i32.store $0
-        local.get $src
-        i32.const 9
-        i32.add
-        i32.load $0
-        local.set $x
-        local.get $dest
-        i32.const 8
-        i32.add
-        local.get $w
-        i32.const 24
-        i32.shr_u
-        local.get $x
-        i32.const 8
-        i32.shl
-        i32.or
-        i32.store $0
-        local.get $src
-        i32.const 13
-        i32.add
-        i32.load $0
-        local.set $w
-        local.get $dest
-        i32.const 12
-        i32.add
-        local.get $x
-        i32.const 24
-        i32.shr_u
-        local.get $w
-        i32.const 8
-        i32.shl
-        i32.or
-        i32.store $0
-        local.get $src
-        i32.const 16
-        i32.add
-        local.set $src
-        local.get $dest
-        i32.const 16
-        i32.add
-        local.set $dest
-        local.get $n
-        i32.const 16
-        i32.sub
-        local.set $n
-        br $while-continue|3
-       end
-      end
-      br $break|2
-     end
-     local.get $src
-     i32.load $0
-     local.set $w
-     local.get $dest
-     local.tee $16
-     i32.const 1
-     i32.add
-     local.set $dest
-     local.get $16
-     local.get $src
-     local.tee $17
-     i32.const 1
-     i32.add
-     local.set $src
-     local.get $17
-     i32.load8_u $0
-     i32.store8 $0
-     local.get $dest
-     local.tee $18
-     i32.const 1
-     i32.add
-     local.set $dest
-     local.get $18
-     local.get $src
-     local.tee $19
-     i32.const 1
-     i32.add
-     local.set $src
-     local.get $19
-     i32.load8_u $0
-     i32.store8 $0
-     local.get $n
-     i32.const 2
-     i32.sub
-     local.set $n
-     loop $while-continue|4
-      local.get $n
-      i32.const 18
-      i32.ge_u
-      if
-       local.get $src
-       i32.const 2
-       i32.add
-       i32.load $0
-       local.set $x
-       local.get $dest
-       local.get $w
-       i32.const 16
-       i32.shr_u
-       local.get $x
-       i32.const 16
-       i32.shl
-       i32.or
-       i32.store $0
-       local.get $src
-       i32.const 6
-       i32.add
-       i32.load $0
-       local.set $w
-       local.get $dest
-       i32.const 4
-       i32.add
-       local.get $x
-       i32.const 16
-       i32.shr_u
-       local.get $w
-       i32.const 16
-       i32.shl
-       i32.or
-       i32.store $0
-       local.get $src
-       i32.const 10
-       i32.add
-       i32.load $0
-       local.set $x
-       local.get $dest
-       i32.const 8
-       i32.add
-       local.get $w
-       i32.const 16
-       i32.shr_u
-       local.get $x
-       i32.const 16
-       i32.shl
-       i32.or
-       i32.store $0
-       local.get $src
-       i32.const 14
-       i32.add
-       i32.load $0
-       local.set $w
-       local.get $dest
-       i32.const 12
-       i32.add
-       local.get $x
-       i32.const 16
-       i32.shr_u
-       local.get $w
-       i32.const 16
-       i32.shl
-       i32.or
-       i32.store $0
-       local.get $src
-       i32.const 16
-       i32.add
-       local.set $src
-       local.get $dest
-       i32.const 16
-       i32.add
-       local.set $dest
-       local.get $n
-       i32.const 16
-       i32.sub
-       local.set $n
-       br $while-continue|4
-      end
-     end
-     br $break|2
-    end
-    local.get $src
-    i32.load $0
-    local.set $w
-    local.get $dest
-    local.tee $20
-    i32.const 1
-    i32.add
-    local.set $dest
-    local.get $20
-    local.get $src
-    local.tee $21
-    i32.const 1
-    i32.add
-    local.set $src
-    local.get $21
-    i32.load8_u $0
-    i32.store8 $0
-    local.get $n
-    i32.const 1
-    i32.sub
-    local.set $n
-    loop $while-continue|5
-     local.get $n
-     i32.const 19
-     i32.ge_u
-     if
-      local.get $src
-      i32.const 3
-      i32.add
-      i32.load $0
-      local.set $x
-      local.get $dest
-      local.get $w
-      i32.const 8
-      i32.shr_u
-      local.get $x
-      i32.const 24
-      i32.shl
-      i32.or
-      i32.store $0
-      local.get $src
-      i32.const 7
-      i32.add
-      i32.load $0
-      local.set $w
-      local.get $dest
-      i32.const 4
-      i32.add
-      local.get $x
-      i32.const 8
-      i32.shr_u
-      local.get $w
-      i32.const 24
-      i32.shl
-      i32.or
-      i32.store $0
-      local.get $src
-      i32.const 11
-      i32.add
-      i32.load $0
-      local.set $x
-      local.get $dest
-      i32.const 8
-      i32.add
-      local.get $w
-      i32.const 8
-      i32.shr_u
-      local.get $x
-      i32.const 24
-      i32.shl
-      i32.or
-      i32.store $0
-      local.get $src
-      i32.const 15
-      i32.add
-      i32.load $0
-      local.set $w
-      local.get $dest
-      i32.const 12
-      i32.add
-      local.get $x
-      i32.const 8
-      i32.shr_u
-      local.get $w
-      i32.const 24
-      i32.shl
-      i32.or
-      i32.store $0
-      local.get $src
-      i32.const 16
-      i32.add
-      local.set $src
-      local.get $dest
-      i32.const 16
-      i32.add
-      local.set $dest
-      local.get $n
-      i32.const 16
-      i32.sub
-      local.set $n
-      br $while-continue|5
-     end
-    end
-    br $break|2
-   end
-  end
-  local.get $n
-  i32.const 16
-  i32.and
-  if
-   local.get $dest
-   local.tee $22
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $22
-   local.get $src
-   local.tee $23
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $23
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $24
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $24
-   local.get $src
-   local.tee $25
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $25
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $26
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $26
-   local.get $src
-   local.tee $27
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $27
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $28
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $28
-   local.get $src
-   local.tee $29
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $29
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $30
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $30
-   local.get $src
-   local.tee $31
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $31
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $32
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $32
-   local.get $src
-   local.tee $33
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $33
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $34
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $34
-   local.get $src
-   local.tee $35
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $35
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $36
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $36
-   local.get $src
-   local.tee $37
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $37
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $38
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $38
-   local.get $src
-   local.tee $39
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $39
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $40
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $40
-   local.get $src
-   local.tee $41
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $41
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $42
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $42
-   local.get $src
-   local.tee $43
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $43
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $44
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $44
-   local.get $src
-   local.tee $45
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $45
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $46
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $46
-   local.get $src
-   local.tee $47
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $47
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $48
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $48
-   local.get $src
-   local.tee $49
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $49
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $50
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $50
-   local.get $src
-   local.tee $51
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $51
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $52
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $52
-   local.get $src
-   local.tee $53
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $53
-   i32.load8_u $0
-   i32.store8 $0
-  end
-  local.get $n
-  i32.const 8
-  i32.and
-  if
-   local.get $dest
-   local.tee $54
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $54
-   local.get $src
-   local.tee $55
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $55
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $56
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $56
-   local.get $src
-   local.tee $57
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $57
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $58
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $58
-   local.get $src
-   local.tee $59
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $59
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $60
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $60
-   local.get $src
-   local.tee $61
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $61
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $62
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $62
-   local.get $src
-   local.tee $63
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $63
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $64
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $64
-   local.get $src
-   local.tee $65
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $65
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $66
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $66
-   local.get $src
-   local.tee $67
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $67
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $68
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $68
-   local.get $src
-   local.tee $69
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $69
-   i32.load8_u $0
-   i32.store8 $0
-  end
-  local.get $n
-  i32.const 4
-  i32.and
-  if
-   local.get $dest
-   local.tee $70
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $70
-   local.get $src
-   local.tee $71
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $71
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $72
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $72
-   local.get $src
-   local.tee $73
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $73
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $74
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $74
-   local.get $src
-   local.tee $75
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $75
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $76
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $76
-   local.get $src
-   local.tee $77
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $77
-   i32.load8_u $0
-   i32.store8 $0
-  end
-  local.get $n
-  i32.const 2
-  i32.and
-  if
-   local.get $dest
-   local.tee $78
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $78
-   local.get $src
-   local.tee $79
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $79
-   i32.load8_u $0
-   i32.store8 $0
-   local.get $dest
-   local.tee $80
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $80
-   local.get $src
-   local.tee $81
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $81
-   i32.load8_u $0
-   i32.store8 $0
-  end
-  local.get $n
-  i32.const 1
-  i32.and
-  if
-   local.get $dest
-   local.tee $82
-   i32.const 1
-   i32.add
-   local.set $dest
-   local.get $82
-   local.get $src
-   local.tee $83
-   i32.const 1
-   i32.add
-   local.set $src
-   local.get $83
-   i32.load8_u $0
-   i32.store8 $0
-  end
- )
- (func $~lib/memory/memory.copy (param $dst i32) (param $src i32) (param $n i32)
-  (local $dest i32)
-  (local $src|4 i32)
-  (local $n|5 i32)
-  (local $6 i32)
-  (local $7 i32)
-  (local $8 i32)
-  (local $9 i32)
-  block $~lib/util/memory/memmove|inlined.0
-   local.get $dst
-   local.set $dest
-   local.get $src
-   local.set $src|4
-   local.get $n
-   local.set $n|5
-   local.get $dest
-   local.get $src|4
-   i32.eq
-   if
-    br $~lib/util/memory/memmove|inlined.0
-   end
-   i32.const 0
-   i32.const 1
-   i32.lt_s
-   drop
-   local.get $src|4
-   local.get $dest
-   i32.sub
-   local.get $n|5
-   i32.sub
-   i32.const 0
-   local.get $n|5
-   i32.const 1
-   i32.shl
-   i32.sub
-   i32.le_u
-   if
-    local.get $dest
-    local.get $src|4
-    local.get $n|5
-    call $~lib/util/memory/memcpy
-    br $~lib/util/memory/memmove|inlined.0
-   end
-   local.get $dest
-   local.get $src|4
-   i32.lt_u
-   if
-    i32.const 0
-    i32.const 2
-    i32.lt_s
-    drop
-    local.get $src|4
-    i32.const 7
-    i32.and
-    local.get $dest
-    i32.const 7
-    i32.and
-    i32.eq
-    if
-     loop $while-continue|0
-      local.get $dest
-      i32.const 7
-      i32.and
-      if
-       local.get $n|5
-       i32.eqz
-       if
-        br $~lib/util/memory/memmove|inlined.0
-       end
-       local.get $n|5
-       i32.const 1
-       i32.sub
-       local.set $n|5
-       local.get $dest
-       local.tee $6
-       i32.const 1
-       i32.add
-       local.set $dest
-       local.get $6
-       local.get $src|4
-       local.tee $7
-       i32.const 1
-       i32.add
-       local.set $src|4
-       local.get $7
-       i32.load8_u $0
-       i32.store8 $0
-       br $while-continue|0
-      end
-     end
-     loop $while-continue|1
-      local.get $n|5
-      i32.const 8
-      i32.ge_u
-      if
-       local.get $dest
-       local.get $src|4
-       i64.load $0
-       i64.store $0
-       local.get $n|5
-       i32.const 8
-       i32.sub
-       local.set $n|5
-       local.get $dest
-       i32.const 8
-       i32.add
-       local.set $dest
-       local.get $src|4
-       i32.const 8
-       i32.add
-       local.set $src|4
-       br $while-continue|1
-      end
-     end
-    end
-    loop $while-continue|2
-     local.get $n|5
-     if
-      local.get $dest
-      local.tee $8
-      i32.const 1
-      i32.add
-      local.set $dest
-      local.get $8
-      local.get $src|4
-      local.tee $9
-      i32.const 1
-      i32.add
-      local.set $src|4
-      local.get $9
-      i32.load8_u $0
-      i32.store8 $0
-      local.get $n|5
-      i32.const 1
-      i32.sub
-      local.set $n|5
-      br $while-continue|2
-     end
-    end
-   else
-    i32.const 0
-    i32.const 2
-    i32.lt_s
-    drop
-    local.get $src|4
-    i32.const 7
-    i32.and
-    local.get $dest
-    i32.const 7
-    i32.and
-    i32.eq
-    if
-     loop $while-continue|3
-      local.get $dest
-      local.get $n|5
-      i32.add
-      i32.const 7
-      i32.and
-      if
-       local.get $n|5
-       i32.eqz
-       if
-        br $~lib/util/memory/memmove|inlined.0
-       end
-       local.get $dest
-       local.get $n|5
-       i32.const 1
-       i32.sub
-       local.tee $n|5
-       i32.add
-       local.get $src|4
-       local.get $n|5
-       i32.add
-       i32.load8_u $0
-       i32.store8 $0
-       br $while-continue|3
-      end
-     end
-     loop $while-continue|4
-      local.get $n|5
-      i32.const 8
-      i32.ge_u
-      if
-       local.get $n|5
-       i32.const 8
-       i32.sub
-       local.set $n|5
-       local.get $dest
-       local.get $n|5
-       i32.add
-       local.get $src|4
-       local.get $n|5
-       i32.add
-       i64.load $0
-       i64.store $0
-       br $while-continue|4
-      end
-     end
-    end
-    loop $while-continue|5
-     local.get $n|5
-     if
-      local.get $dest
-      local.get $n|5
-      i32.const 1
-      i32.sub
-      local.tee $n|5
-      i32.add
-      local.get $src|4
-      local.get $n|5
-      i32.add
-      i32.load8_u $0
-      i32.store8 $0
-      br $while-continue|5
-     end
-    end
-   end
-  end
  )
  (func $~lib/rt/__newBuffer (param $size i32) (param $id i32) (param $data i32) (result i32)
   (local $buffer i32)
@@ -3959,7 +2420,7 @@
    local.get $buffer
    local.get $data
    local.get $size
-   call $~lib/memory/memory.copy
+   memory.copy $0 $0
   end
   local.get $buffer
   return
@@ -4336,7 +2797,7 @@
   i32.shr_u
   return
  )
- (func $start:assembly/Kanvasgodscontract
+ (func $start:assembly/Collections
   call $start:assembly/Constants
  )
  (func $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments#constructor (param $this i32) (result i32)
@@ -4406,7 +2867,7 @@
   local.get $5
   i32.lt_u
   select
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $newPtr
   return
  )
@@ -4959,7 +3420,7 @@
   local.get $this
   i32.load $0
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_contractId (param $this i32) (param $_contractId i32)
+ (func $assembly/Collections/Collections#set:_contractId (param $this i32) (param $_contractId i32)
   local.get $this
   local.get $_contractId
   i32.store $0
@@ -5004,7 +3465,7 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_contractId (param $this i32) (result i32)
   local.get $this
   i32.load $0
  )
@@ -5039,12 +3500,12 @@
  (func $~lib/as-proto/assembly/Writer/Writer#uint64 (param $this i32) (param $value i64)
   unreachable
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|0 (result i32)
+ (func $assembly/Collections/Collections#constructor~anonymous|0 (result i32)
   i32.const 0
   i64.const 0
   call $assembly/proto/collections/collections.balance_object#constructor
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_supply (param $this i32) (param $_supply i32)
+ (func $assembly/Collections/Collections#set:_supply (param $this i32) (param $_supply i32)
   local.get $this
   local.get $_supply
   i32.store $0 offset=4
@@ -5102,7 +3563,7 @@
   local.get $this
   i32.load $0
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokens (param $this i32) (param $_tokens i32)
+ (func $assembly/Collections/Collections#set:_tokens (param $this i32) (param $_tokens i32)
   local.get $this
   local.get $_tokens
   i32.store $0 offset=8
@@ -5147,12 +3608,12 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|1 (result i32)
+ (func $assembly/Collections/Collections#constructor~anonymous|1 (result i32)
   i32.const 0
   i64.const 0
   call $assembly/proto/collections/collections.balance_object#constructor
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_balances (param $this i32) (param $_balances i32)
+ (func $assembly/Collections/Collections#set:_balances (param $this i32) (param $_balances i32)
   local.get $this
   local.get $_balances
   i32.store $0 offset=12
@@ -5210,7 +3671,7 @@
   local.get $this
   i32.load $0
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_approvals (param $this i32) (param $_approvals i32)
+ (func $assembly/Collections/Collections#set:_approvals (param $this i32) (param $_approvals i32)
   local.get $this
   local.get $_approvals
   i32.store $0 offset=16
@@ -5286,7 +3747,7 @@
  (func $~lib/as-proto/assembly/Writer/Writer#bool (param $this i32) (param $value i32)
   unreachable
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_operators (param $this i32) (param $_operators i32)
+ (func $assembly/Collections/Collections#set:_operators (param $this i32) (param $_operators i32)
   local.get $this
   local.get $_operators
   i32.store $0 offset=20
@@ -5357,7 +3818,7 @@
   local.get $length_
   i32.store $0 offset=12
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokensOf (param $this i32) (param $_tokensOf i32)
+ (func $assembly/Collections/Collections#set:_tokensOf (param $this i32) (param $_tokensOf i32)
   local.get $this
   local.get $_tokensOf
   i32.store $0 offset=24
@@ -5463,7 +3924,7 @@
   local.get $this
   i32.load $0 offset=8
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_config (param $this i32) (param $_config i32)
+ (func $assembly/Collections/Collections#set:_config (param $this i32) (param $_config i32)
   local.get $this
   local.get $_config
   i32.store $0 offset=28
@@ -5705,7 +4166,7 @@
     i32.add
     local.get $src
     local.get $srcLength
-    call $~lib/memory/memory.copy
+    memory.copy $0 $0
     local.get $index
     local.get $srcLength
     i32.add
@@ -6871,7 +5332,7 @@
   i32.const 0
   call $~lib/rt/itcms/__link
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#burn (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#burn (param $this i32) (param $args i32) (result i32)
   i32.const 0
   call $assembly/proto/collections/collections.empty_object#constructor
   return
@@ -7208,7 +5669,7 @@
  )
  (func $start:assembly/index
   call $start:~lib/@koinos/sdk-as/index
-  call $start:assembly/Kanvasgodscontract
+  call $start:assembly/Collections
   call $assembly/index/main
   drop
  )
@@ -8071,7 +6532,7 @@
   local.get $1
   call $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result>#__visit
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract~visit (param $0 i32) (param $1 i32)
+ (func $assembly/Collections/Collections~visit (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $0
   local.get $1
@@ -9954,7 +8415,7 @@
                                                                                                         block $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>
                                                                                                          block $assembly/proto/collections/collections.token_object
                                                                                                           block $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>
-                                                                                                           block $assembly/Kanvasgodscontract/Kanvasgodscontract
+                                                                                                           block $assembly/Collections/Collections
                                                                                                             block $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result>
                                                                                                              block $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.argument_data
                                                                                                               block $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result
@@ -9985,7 +8446,7 @@
                                                                                                                                       i32.const 8
                                                                                                                                       i32.sub
                                                                                                                                       i32.load $0
-                                                                                                                                      br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/as-proto/assembly/internal/FixedWriter/FixedWriter $~lib/as-proto/assembly/Writer/Writer $~lib/as-proto/assembly/internal/FixedSizer/FixedSizer $~lib/array/Array<u32> $~lib/array/Array<i32> $~lib/typedarray/Uint8Array $~lib/as-proto/assembly/internal/FixedReader/FixedReader $~lib/as-proto/assembly/Reader/Reader $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.object_space $~lib/typedarray/Uint32Array $~lib/array/Array<u8> $~lib/staticarray/StaticArray<u8> $~lib/@koinos/sdk-as/assembly/systemCalls/System.getArgumentsReturn $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.result $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.argument_data $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result> $assembly/Kanvasgodscontract/Kanvasgodscontract $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object> $assembly/proto/collections/collections.token_object $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object> $assembly/proto/collections/collections.token_approval_object $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object> $assembly/proto/collections/collections.tokens_of_result $~lib/array/Array<~lib/string/String> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result> $assembly/proto/collections/collections.config_object $assembly/proto/collections/collections.royalty_object $~lib/array/Array<assembly/proto/collections/collections.royalty_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object> $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.balance_object> $~lib/function/Function<%28assembly/proto/collections/collections.balance_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.balance_object|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.token_object> $~lib/function/Function<%28assembly/proto/collections/collections.token_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.token_approval_object> $~lib/function/Function<%28assembly/proto/collections/collections.token_approval_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.operator_approval_object> $~lib/function/Function<%28assembly/proto/collections/collections.operator_approval_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.tokens_of_result> $~lib/function/Function<%28assembly/proto/collections/collections.tokens_of_result%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.tokens_of_result|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.config_object> $~lib/function/Function<%28assembly/proto/collections/collections.config_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.config_object|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.name_arguments> $assembly/proto/collections/collections.string_object $~lib/function/Function<%28assembly/proto/collections/collections.string_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.uri_arguments> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.symbol_arguments> $assembly/proto/collections/collections.get_approved_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.get_approved_arguments> $assembly/proto/collections/collections.address_object $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.database_object $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result> $~lib/function/Function<%28assembly/proto/collections/collections.address_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.is_approved_for_all_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.is_approved_for_all_arguments> $~lib/staticarray/StaticArray<~lib/string/String> $~lib/function/Function<%28assembly/proto/collections/collections.bool_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.total_supply_arguments> $~lib/function/Function<%28assembly/proto/collections/collections.uint64_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.royalties_arguments> $assembly/proto/collections/collections.royalties_result $~lib/function/Function<%28assembly/proto/collections/collections.royalties_result%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.set_royalties_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.set_royalties_arguments> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_result> $~lib/array/Array<~lib/typedarray/Uint8Array> $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.SafeInteger<u64> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.royalties_event $~lib/function/Function<%28assembly/proto/collections/collections.royalties_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28assembly/proto/collections/collections.empty_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.owner_arguments> $assembly/proto/collections/collections.transfer_ownership_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.transfer_ownership_arguments> $assembly/proto/collections/collections.owner_event $~lib/function/Function<%28assembly/proto/collections/collections.owner_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.balance_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.balance_of_arguments> $assembly/proto/collections/collections.tokens_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.tokens_of_arguments> $assembly/proto/collections/collections.owner_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.owner_of_arguments> $assembly/proto/collections/collections.mint_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.mint_arguments> $assembly/proto/collections/collections.mint_event $~lib/function/Function<%28assembly/proto/collections/collections.mint_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.burn_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.burn_arguments> $assembly/proto/collections/collections.transfer_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.transfer_arguments> $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.caller_data $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.transfer_event $~lib/function/Function<%28assembly/proto/collections/collections.transfer_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.approve_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.approve_arguments> $assembly/proto/collections/collections.token_approval_event $~lib/function/Function<%28assembly/proto/collections/collections.token_approval_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.set_approval_for_all_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.set_approval_for_all_arguments> $assembly/proto/collections/collections.operator_approval_event $~lib/function/Function<%28assembly/proto/collections/collections.operator_approval_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $invalid
+                                                                                                                                      br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/as-proto/assembly/internal/FixedWriter/FixedWriter $~lib/as-proto/assembly/Writer/Writer $~lib/as-proto/assembly/internal/FixedSizer/FixedSizer $~lib/array/Array<u32> $~lib/array/Array<i32> $~lib/typedarray/Uint8Array $~lib/as-proto/assembly/internal/FixedReader/FixedReader $~lib/as-proto/assembly/Reader/Reader $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.object_space $~lib/typedarray/Uint32Array $~lib/array/Array<u8> $~lib/staticarray/StaticArray<u8> $~lib/@koinos/sdk-as/assembly/systemCalls/System.getArgumentsReturn $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.error_data> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.result $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.exit_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.argument_data $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_result> $assembly/Collections/Collections $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object> $assembly/proto/collections/collections.token_object $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object> $assembly/proto/collections/collections.token_approval_object $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_approval_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.operator_approval_object> $assembly/proto/collections/collections.tokens_of_result $~lib/array/Array<~lib/string/String> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result> $assembly/proto/collections/collections.config_object $assembly/proto/collections/collections.royalty_object $~lib/array/Array<assembly/proto/collections/collections.royalty_object> $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object> $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_result> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.balance_object> $~lib/function/Function<%28assembly/proto/collections/collections.balance_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.balance_object|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.token_object> $~lib/function/Function<%28assembly/proto/collections/collections.token_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.token_approval_object> $~lib/function/Function<%28assembly/proto/collections/collections.token_approval_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.operator_approval_object> $~lib/function/Function<%28assembly/proto/collections/collections.operator_approval_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.tokens_of_result> $~lib/function/Function<%28assembly/proto/collections/collections.tokens_of_result%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.tokens_of_result|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.config_object> $~lib/function/Function<%28assembly/proto/collections/collections.config_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28%29=>assembly/proto/collections/collections.config_object|null> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.name_arguments> $assembly/proto/collections/collections.string_object $~lib/function/Function<%28assembly/proto/collections/collections.string_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.uri_arguments> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.symbol_arguments> $assembly/proto/collections/collections.get_approved_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.get_approved_arguments> $assembly/proto/collections/collections.address_object $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.database_object $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_object_result> $~lib/function/Function<%28assembly/proto/collections/collections.address_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.is_approved_for_all_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.is_approved_for_all_arguments> $~lib/staticarray/StaticArray<~lib/string/String> $~lib/function/Function<%28assembly/proto/collections/collections.bool_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.total_supply_arguments> $~lib/function/Function<%28assembly/proto/collections/collections.uint64_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.royalties_arguments> $assembly/proto/collections/collections.royalties_result $~lib/function/Function<%28assembly/proto/collections/collections.royalties_result%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.set_royalties_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.set_royalties_arguments> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.check_authority_result> $~lib/array/Array<~lib/typedarray/Uint8Array> $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.SafeInteger<u64> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.put_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.royalties_event $~lib/function/Function<%28assembly/proto/collections/collections.royalties_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.event_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28assembly/proto/collections/collections.empty_object%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.owner_arguments> $assembly/proto/collections/collections.transfer_ownership_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.transfer_ownership_arguments> $assembly/proto/collections/collections.owner_event $~lib/function/Function<%28assembly/proto/collections/collections.owner_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.balance_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.balance_of_arguments> $assembly/proto/collections/collections.tokens_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.tokens_of_arguments> $assembly/proto/collections/collections.owner_of_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.owner_of_arguments> $assembly/proto/collections/collections.mint_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.mint_arguments> $assembly/proto/collections/collections.mint_event $~lib/function/Function<%28assembly/proto/collections/collections.mint_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.burn_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.burn_arguments> $assembly/proto/collections/collections.transfer_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.transfer_arguments> $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.caller_data $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_result> $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments $~lib/function/Function<%28~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.remove_object_arguments%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.transfer_event $~lib/function/Function<%28assembly/proto/collections/collections.transfer_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.approve_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.approve_arguments> $assembly/proto/collections/collections.token_approval_event $~lib/function/Function<%28assembly/proto/collections/collections.token_approval_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $assembly/proto/collections/collections.set_approval_for_all_arguments $~lib/function/Function<%28~lib/as-proto/assembly/Reader/Reader%2Ci32%29=>assembly/proto/collections/collections.set_approval_for_all_arguments> $assembly/proto/collections/collections.operator_approval_event $~lib/function/Function<%28assembly/proto/collections/collections.operator_approval_event%2C~lib/as-proto/assembly/Writer/Writer%29=>void> $invalid
                                                                                                                                      end
                                                                                                                                      return
                                                                                                                                     end
@@ -10101,7 +8562,7 @@
                                                                                                            end
                                                                                                            local.get $0
                                                                                                            local.get $1
-                                                                                                           call $assembly/Kanvasgodscontract/Kanvasgodscontract~visit
+                                                                                                           call $assembly/Collections/Collections~visit
                                                                                                            return
                                                                                                           end
                                                                                                           local.get $0
@@ -10624,12 +9085,6 @@
   unreachable
  )
  (func $~start
-  global.get $~started
-  if
-   return
-  end
-  i32.const 1
-  global.set $~started
   call $start:assembly/index
  )
  (func $~stack_check
@@ -10970,14 +9425,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $this
   i32.eqz
   if
@@ -11753,7 +10203,7 @@
   local.get $4
   call $~lib/array/Array<u8>#get:dataStart
   local.get $outSize
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $out
   local.set $4
   global.get $~lib/memory/__stack_pointer
@@ -12040,7 +10490,7 @@
    local.get $len
    i32.const 0
    i32.shl
-   call $~lib/memory/memory.copy
+   memory.copy $0 $0
    local.get $slice
    br $~lib/typedarray/SLICE<~lib/typedarray/Uint8Array,u8>|inlined.0
   end
@@ -12111,14 +10561,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $source
   local.set $11
   global.get $~lib/memory/__stack_pointer
@@ -13500,7 +11945,7 @@
   i32.const 0
   call $~lib/@koinos/sdk-as/assembly/util/stringBytes/StringBytes.toUTF8
   local.get $len
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $bytes
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -13787,7 +12232,7 @@
   local.get $begin
   i32.add
   local.get $outSize
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $out
   local.set $16
   global.get $~lib/memory/__stack_pointer
@@ -14298,17 +12743,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -14870,14 +13307,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $length
   i32.const 0
   i32.lt_s
@@ -15119,20 +13551,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=32
+  i32.const 36
+  memory.fill $0
   i32.const 0
   call $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_arguments_arguments#constructor
   local.set $args
@@ -15667,14 +14088,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   i32.const 0
   call $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_contract_id_arguments#constructor
   local.set $args
@@ -17867,7 +16283,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|2 (result i32)
+ (func $assembly/Collections/Collections#constructor~anonymous|2 (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -18105,14 +16521,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $2of2
    block $1of2
     block $0of2
@@ -18509,14 +16920,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $length
   i32.const 0
   i32.lt_s
@@ -18979,7 +17385,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor~anonymous|3 (result i32)
+ (func $assembly/Collections/Collections#constructor~anonymous|3 (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -18993,6 +17399,19 @@
   i64.store $0
   i32.const 0
   global.get $assembly/Constants/Constants.OWNER
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store $0 offset=4
+  local.get $2
+  call $~lib/typedarray/Uint8Array#get:length
+  i32.const 0
+  i32.eq
+  if (result i32)
+   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getContractId
+  else
+   global.get $assembly/Constants/Constants.OWNER
+  end
   local.set $2
   global.get $~lib/memory/__stack_pointer
   local.get $2
@@ -19016,7 +17435,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#constructor (param $this i32) (result i32)
   (local $1 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 28
@@ -19024,17 +17443,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   local.get $this
   i32.eqz
   if
@@ -19052,7 +17463,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_contractId
+  call $assembly/Collections/Collections#set:_contractId
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19060,7 +17471,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_supply
+  call $assembly/Collections/Collections#set:_supply
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19068,7 +17479,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokens
+  call $assembly/Collections/Collections#set:_tokens
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19076,7 +17487,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_balances
+  call $assembly/Collections/Collections#set:_balances
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19084,7 +17495,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_approvals
+  call $assembly/Collections/Collections#set:_approvals
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19092,7 +17503,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_operators
+  call $assembly/Collections/Collections#set:_operators
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19100,7 +17511,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokensOf
+  call $assembly/Collections/Collections#set:_tokensOf
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19108,7 +17519,7 @@
   i32.store $0 offset=4
   local.get $1
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_config
+  call $assembly/Collections/Collections#set:_config
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19121,7 +17532,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_contractId
+  call $assembly/Collections/Collections#set:_contractId
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19135,13 +17546,13 @@
   local.get $1
   i32.store $0 offset=20
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/SUPPLY_SPACE_ID
+  global.get $assembly/Collections/SUPPLY_SPACE_ID
   i32.const 1456
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19167,7 +17578,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_supply
+  call $assembly/Collections/Collections#set:_supply
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19181,13 +17592,13 @@
   local.get $1
   i32.store $0 offset=16
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/TOKENS_SPACE_ID
+  global.get $assembly/Collections/TOKENS_SPACE_ID
   i32.const 1552
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19208,7 +17619,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokens
+  call $assembly/Collections/Collections#set:_tokens
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19222,13 +17633,13 @@
   local.get $1
   i32.store $0 offset=20
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/BALANCES_SPACE_ID
+  global.get $assembly/Collections/BALANCES_SPACE_ID
   i32.const 1456
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19254,7 +17665,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_balances
+  call $assembly/Collections/Collections#set:_balances
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19268,13 +17679,13 @@
   local.get $1
   i32.store $0 offset=16
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/APPROVALS_SPACE_ID
+  global.get $assembly/Collections/APPROVALS_SPACE_ID
   i32.const 1648
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19295,7 +17706,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_approvals
+  call $assembly/Collections/Collections#set:_approvals
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19309,13 +17720,13 @@
   local.get $1
   i32.store $0 offset=16
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/OPERATORS_SPACE_ID
+  global.get $assembly/Collections/OPERATORS_SPACE_ID
   i32.const 1712
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19336,7 +17747,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_operators
+  call $assembly/Collections/Collections#set:_operators
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19350,13 +17761,13 @@
   local.get $1
   i32.store $0 offset=20
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/TOKEN_OF_SPACE_ID
+  global.get $assembly/Collections/TOKEN_OF_SPACE_ID
   i32.const 1808
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19382,7 +17793,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_tokensOf
+  call $assembly/Collections/Collections#set:_tokensOf
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19396,13 +17807,13 @@
   local.get $1
   i32.store $0 offset=20
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
+  call $assembly/Collections/Collections#get:_contractId
   local.set $1
   global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store $0 offset=12
   local.get $1
-  global.get $assembly/Kanvasgodscontract/CONFIG_SPACE_ID
+  global.get $assembly/Collections/CONFIG_SPACE_ID
   i32.const 1968
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19428,7 +17839,7 @@
   local.get $1
   i32.store $0 offset=8
   local.get $1
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#set:_config
+  call $assembly/Collections/Collections#set:_config
   local.get $this
   local.set $1
   global.get $~lib/memory/__stack_pointer
@@ -19667,7 +18078,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#name (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#name (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -20021,7 +18432,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#uri (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#uri (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -20225,7 +18636,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#symbol (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#symbol (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 4
@@ -21216,14 +19627,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $3of3
    block $2of3
     block $1of3
@@ -21464,14 +19870,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $length
   i32.const 0
   i32.lt_s
@@ -21642,17 +20043,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
+  i32.const 0
+  i32.const 32
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -22026,14 +20419,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.set $3
@@ -22110,7 +20498,7 @@
   local.get $3
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get_approved (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#get_approved (param $this i32) (param $args i32) (result i32)
   (local $token_id i32)
   (local $res i32)
   (local $approval i32)
@@ -22121,14 +20509,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $5
@@ -22160,7 +20543,7 @@
   local.get $5
   i32.store $0 offset=16
   local.get $5
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_approvals
+  call $assembly/Collections/Collections#get:_approvals
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -22437,14 +20820,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $2of2
    block $1of2
     block $0of2
@@ -22890,13 +21268,13 @@
   local.get $out
   local.get $this
   local.get $thisSize
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $out
   local.get $thisSize
   i32.add
   local.get $other
   local.get $otherSize
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $out
   local.set $6
   global.get $~lib/memory/__stack_pointer
@@ -22957,17 +21335,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   global.get $~lib/@koinos/sdk-as/assembly/util/base58/Base58.ALPHABET
   local.set $13
@@ -23392,7 +21762,7 @@
      local.get $valueLen
      i32.const 1
      i32.shl
-     call $~lib/memory/memory.copy
+     memory.copy $0 $0
      local.get $offset
      local.get $valueLen
      i32.add
@@ -23409,7 +21779,7 @@
      local.get $sepLen
      i32.const 1
      i32.shl
-     call $~lib/memory/memory.copy
+     memory.copy $0 $0
      local.get $offset
      local.get $sepLen
      i32.add
@@ -23450,7 +21820,7 @@
    call $~lib/string/String#get:length
    i32.const 1
    i32.shl
-   call $~lib/memory/memory.copy
+   memory.copy $0 $0
   end
   local.get $result
   local.set $13
@@ -23506,7 +21876,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#_get_approved_operator_key (param $this i32) (param $approver i32) (param $operator i32) (result i32)
+ (func $assembly/Collections/Collections#_get_approved_operator_key (param $this i32) (param $operator i32) (param $owner i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -23516,16 +21886,11 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
-  local.get $approver
+  local.get $operator
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -23535,7 +21900,7 @@
   local.tee $3
   i32.store $0 offset=4
   global.get $~lib/memory/__stack_pointer
-  local.get $operator
+  local.get $owner
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -23834,7 +22199,7 @@
   local.get $3
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#is_approved_for_all (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#is_approved_for_all (param $this i32) (param $args i32) (result i32)
   (local $owner i32)
   (local $operator i32)
   (local $res i32)
@@ -23846,17 +22211,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $6
@@ -23887,7 +22244,7 @@
   local.get $6
   i32.store $0 offset=16
   local.get $6
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_operators
+  call $assembly/Collections/Collections#get:_operators
   local.set $6
   global.get $~lib/memory/__stack_pointer
   local.get $6
@@ -23899,19 +22256,19 @@
   local.get $6
   i32.store $0 offset=16
   local.get $6
-  local.get $owner
+  local.get $operator
   local.set $6
   global.get $~lib/memory/__stack_pointer
   local.get $6
   i32.store $0 offset=20
   local.get $6
-  local.get $operator
+  local.get $owner
   local.set $6
   global.get $~lib/memory/__stack_pointer
   local.get $6
   i32.store $0 offset=24
   local.get $6
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#_get_approved_operator_key
+  call $assembly/Collections/Collections#_get_approved_operator_key
   local.set $6
   global.get $~lib/memory/__stack_pointer
   local.get $6
@@ -24242,17 +22599,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
+  i32.const 0
+  i32.const 32
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -24667,7 +23016,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#total_supply (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#total_supply (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   (local $supply i32)
   (local $4 i32)
@@ -24685,7 +23034,7 @@
   local.get $4
   i32.store $0 offset=4
   local.get $4
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_supply
+  call $assembly/Collections/Collections#get:_supply
   local.set $4
   global.get $~lib/memory/__stack_pointer
   local.get $4
@@ -25164,14 +23513,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.set $2
@@ -25300,7 +23644,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#royalties (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#royalties (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   (local $config i32)
   (local $4 i32)
@@ -25323,7 +23667,7 @@
   local.get $4
   i32.store $0 offset=4
   local.get $4
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $4
   global.get $~lib/memory/__stack_pointer
   local.get $4
@@ -25658,14 +24002,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $length
   i32.const 0
   i32.lt_s
@@ -26354,14 +24693,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   local.get $type
@@ -26537,14 +24871,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $type
   local.get $account
   local.set $2
@@ -26598,60 +24927,32 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#_checkOwner (param $this i32) (param $config i32)
-  (local $currentOwner i32)
-  (local $3 i32)
+ (func $assembly/Collections/Collections#_checkOwner (param $this i32) (param $config i32)
+  (local $2 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 12
+  i32.const 4
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=8
-  local.get $config
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store $0 offset=4
-  local.get $3
-  call $assembly/proto/collections/collections.config_object#get:owner
-  local.set $3
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
   i32.store $0
-  local.get $3
-  call $~lib/typedarray/Uint8Array#get:length
-  if
-   global.get $~lib/memory/__stack_pointer
-   local.get $config
-   local.set $3
-   global.get $~lib/memory/__stack_pointer
-   local.get $3
-   i32.store $0
-   local.get $3
-   call $assembly/proto/collections/collections.config_object#get:owner
-   local.tee $currentOwner
-   i32.store $0 offset=8
-  else
-   global.get $~lib/memory/__stack_pointer
-   global.get $assembly/Constants/Constants.OWNER
-   local.tee $currentOwner
-   i32.store $0 offset=8
-  end
   global.get $~lib/@koinos/proto-as/assembly/koinos/chain/authority/authority.authorization_type.contract_call
-  local.get $currentOwner
-  local.set $3
+  local.get $config
+  local.set $2
   global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store $0 offset=4
-  local.get $3
+  local.get $2
+  i32.store $0
+  local.get $2
+  call $assembly/proto/collections/collections.config_object#get:owner
+  local.set $2
+  global.get $~lib/memory/__stack_pointer
+  local.get $2
+  i32.store $0
+  local.get $2
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.requireAuthority
   global.get $~lib/memory/__stack_pointer
-  i32.const 12
+  i32.const 4
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
@@ -26790,17 +25091,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -26923,17 +25216,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $a
   local.get $b
@@ -27486,17 +25771,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -27670,14 +25947,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $this
   local.set $2
   global.get $~lib/memory/__stack_pointer
@@ -28404,14 +26676,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   local.get $name
@@ -28511,7 +26778,7 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set_royalties (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#set_royalties (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   (local $config i32)
   (local $royalties i32)
@@ -28529,23 +26796,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=40
+  i32.const 44
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
   local.get $this
@@ -28554,7 +26807,7 @@
   local.get $12
   i32.store $0 offset=4
   local.get $12
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $12
   global.get $~lib/memory/__stack_pointer
   local.get $12
@@ -28583,7 +26836,7 @@
   local.get $12
   i32.store $0 offset=4
   local.get $12
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#_checkOwner
+  call $assembly/Collections/Collections#_checkOwner
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $12
@@ -28708,7 +26961,7 @@
   local.get $12
   i32.store $0 offset=28
   local.get $12
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $12
   global.get $~lib/memory/__stack_pointer
   local.get $12
@@ -29026,7 +27279,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $3
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#owner (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#owner (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   (local $config i32)
   (local $4 i32)
@@ -29049,7 +27302,7 @@
   local.get $4
   i32.store $0 offset=4
   local.get $4
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $4
   global.get $~lib/memory/__stack_pointer
   local.get $4
@@ -29735,7 +27988,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#transfer_ownership (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#transfer_ownership (param $this i32) (param $args i32) (result i32)
   (local $2 i32)
   (local $config i32)
   (local $ownerEvent i32)
@@ -29749,23 +28002,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=40
+  i32.const 44
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
   local.get $this
@@ -29774,7 +28013,7 @@
   local.get $8
   i32.store $0 offset=4
   local.get $8
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $8
   global.get $~lib/memory/__stack_pointer
   local.get $8
@@ -29803,7 +28042,7 @@
   local.get $8
   i32.store $0 offset=4
   local.get $8
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#_checkOwner
+  call $assembly/Collections/Collections#_checkOwner
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   local.get $config
@@ -29895,7 +28134,7 @@
   local.get $8
   i32.store $0 offset=16
   local.get $8
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config
+  call $assembly/Collections/Collections#get:_config
   local.set $8
   global.get $~lib/memory/__stack_pointer
   local.get $8
@@ -30349,7 +28588,7 @@
   local.get $3
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#balance_of (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#balance_of (param $this i32) (param $args i32) (result i32)
   (local $owner i32)
   (local $3 i32)
   (local $balanceObj i32)
@@ -30381,7 +28620,7 @@
   local.get $5
   i32.store $0 offset=12
   local.get $5
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
+  call $assembly/Collections/Collections#get:_balances
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -30887,14 +29126,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.set $3
@@ -30971,7 +29205,7 @@
   local.get $3
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#tokens_of (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#tokens_of (param $this i32) (param $args i32) (result i32)
   (local $owner i32)
   (local $3 i32)
   (local $tokensIds i32)
@@ -30982,17 +29216,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
+  i32.const 0
+  i32.const 32
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $5
@@ -31012,7 +29238,7 @@
   local.get $5
   i32.store $0 offset=20
   local.get $5
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
+  call $assembly/Collections/Collections#get:_tokensOf
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -31618,14 +29844,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.set $3
@@ -31702,7 +29923,7 @@
   local.get $3
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#owner_of (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#owner_of (param $this i32) (param $args i32) (result i32)
   (local $token_id i32)
   (local $res i32)
   (local $token i32)
@@ -31713,14 +29934,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $5
@@ -31752,7 +29968,7 @@
   local.get $5
   i32.store $0 offset=16
   local.get $5
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens
+  call $assembly/Collections/Collections#get:_tokens
   local.set $5
   global.get $~lib/memory/__stack_pointer
   local.get $5
@@ -32253,17 +30469,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -32475,14 +30683,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $this
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -32587,14 +30790,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $this
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -33128,96 +31326,112 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#mint (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#mint (param $this i32) (param $args i32) (result i32)
+  (local $2 i32)
+  (local $OWNER i32)
   (local $to i32)
-  (local $3 i32)
-  (local $supply i32)
   (local $5 i32)
+  (local $supply i32)
+  (local $7 i32)
   (local $balance i32)
   (local $tokens i64)
   (local $start i64)
   (local $newToken i32)
   (local $tokenId i32)
   (local $index i64)
-  (local $12 i32)
+  (local $14 i32)
   (local $tokensOf i32)
   (local $mintEvent i32)
-  (local $15 i32)
-  (local $16 i32)
-  (local $impacted i32)
+  (local $17 i32)
   (local $18 i32)
+  (local $impacted i32)
+  (local $20 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 56
+  i32.const 64
   i32.sub
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
+  i32.const 0
+  i32.const 64
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=48
-  global.get $~lib/memory/__stack_pointer
-  global.get $assembly/Constants/Constants.OWNER
-  local.tee $to
-  i32.store $0
   local.get $this
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   i32.store $0 offset=8
-  local.get $18
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_supply
-  local.set $18
+  local.get $20
+  call $assembly/Collections/Collections#get:_config
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   i32.store $0 offset=4
-  local.get $18
-  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#get
-  local.tee $3
+  local.get $20
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.config_object>#get
+  local.tee $2
+  i32.store $0 offset=12
+  local.get $2
   if (result i32)
-   local.get $3
+   local.get $2
+  else
+   unreachable
+  end
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0
+  local.get $20
+  call $assembly/proto/collections/collections.config_object#get:owner
+  local.tee $OWNER
+  i32.store $0 offset=16
+  global.get $~lib/memory/__stack_pointer
+  local.get $OWNER
+  local.tee $to
+  i32.store $0 offset=20
+  local.get $this
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
+  call $assembly/Collections/Collections#get:_supply
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0
+  local.get $20
+  call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#get
+  local.tee $5
+  if (result i32)
+   local.get $5
   else
    unreachable
   end
   local.set $supply
   local.get $this
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
-  local.set $18
-  global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=4
-  local.get $18
-  local.get $to
-  local.set $18
-  global.get $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  call $assembly/Collections/Collections#get:_balances
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0
+  local.get $20
+  local.get $to
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#get
-  local.tee $5
+  local.tee $7
   if (result i32)
-   local.get $5
+   local.get $7
   else
    unreachable
   end
@@ -33225,65 +31439,65 @@
   local.get $supply
   call $assembly/proto/collections/collections.balance_object#get:value
   local.get $args
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   call $assembly/proto/collections/collections.mint_arguments#get:number_tokens_to_mint
   i32.const 224
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
+  local.get $20
+  i32.store $0 offset=8
+  local.get $20
   call $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.add<u64>
   local.set $tokens
   global.get $assembly/Constants/Constants.MINT_FEE
   drop
-  global.get $assembly/Constants/Constants.OWNER
-  local.set $18
+  local.get $OWNER
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=4
-  local.get $18
+  local.get $20
+  i32.store $0
+  local.get $20
   call $~lib/typedarray/Uint8Array#get:length
   i32.const 0
   i32.gt_s
   if
    global.get $~lib/@koinos/proto-as/assembly/koinos/chain/authority/authority.authorization_type.contract_call
-   global.get $assembly/Constants/Constants.OWNER
-   local.set $18
+   local.get $OWNER
+   local.set $20
    global.get $~lib/memory/__stack_pointer
-   local.get $18
-   i32.store $0 offset=8
-   local.get $18
+   local.get $20
+   i32.store $0 offset=4
+   local.get $20
    call $~lib/@koinos/sdk-as/assembly/systemCalls/System.requireAuthority
   else
    global.get $~lib/@koinos/proto-as/assembly/koinos/chain/authority/authority.authorization_type.contract_call
    local.get $this
-   local.set $18
+   local.set $20
    global.get $~lib/memory/__stack_pointer
-   local.get $18
-   i32.store $0 offset=8
-   local.get $18
-   call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_contractId
-   local.set $18
+   local.get $20
+   i32.store $0 offset=4
+   local.get $20
+   call $assembly/Collections/Collections#get:_contractId
+   local.set $20
    global.get $~lib/memory/__stack_pointer
-   local.get $18
-   i32.store $0 offset=8
-   local.get $18
+   local.get $20
+   i32.store $0 offset=4
+   local.get $20
    call $~lib/@koinos/sdk-as/assembly/systemCalls/System.requireAuthority
   end
   local.get $tokens
   i64.const 0
   i64.gt_u
   i32.const 5344
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   i32.const 1
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.require<bool>
   drop
@@ -33291,11 +31505,11 @@
   global.get $assembly/Constants/Constants.MAX_SUPPLY
   i64.le_u
   i32.const 5344
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   i32.const 1
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.require<bool>
   drop
@@ -33303,11 +31517,11 @@
   call $assembly/proto/collections/collections.balance_object#get:value
   i64.const 1
   i32.const 224
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
+  local.get $20
+  i32.store $0 offset=8
+  local.get $20
   call $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.add<u64>
   local.set $start
   global.get $~lib/memory/__stack_pointer
@@ -33317,7 +31531,7 @@
   i32.const 0
   call $assembly/proto/collections/collections.token_object#constructor@varargs
   local.tee $newToken
-  i32.store $0 offset=16
+  i32.store $0 offset=24
   local.get $start
   local.set $index
   loop $for-loop|0
@@ -33330,144 +31544,144 @@
     i32.const 10
     call $~lib/number/U64#toString
     local.tee $tokenId
-    i32.store $0 offset=20
+    i32.store $0 offset=28
     local.get $newToken
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
+    local.get $20
+    i32.store $0
+    local.get $20
     local.get $to
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     call $assembly/proto/collections/collections.token_object#set:owner
     local.get $this
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=24
-    local.get $18
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens
-    local.set $18
+    local.get $20
+    i32.store $0 offset=32
+    local.get $20
+    call $assembly/Collections/Collections#get:_tokens
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
+    local.get $20
+    i32.store $0
+    local.get $20
     local.get $tokenId
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     local.get $newToken
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
+    local.get $20
+    i32.store $0 offset=8
+    local.get $20
     call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/string/String,assembly/proto/collections/collections.token_object>#put
     global.get $~lib/memory/__stack_pointer
     global.get $~lib/memory/__stack_pointer
     local.get $this
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
-    local.set $18
-    global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
-    local.get $to
-    local.set $18
-    global.get $~lib/memory/__stack_pointer
-    local.get $18
+    local.get $20
     i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    call $assembly/Collections/Collections#get:_tokensOf
+    local.set $20
+    global.get $~lib/memory/__stack_pointer
+    local.get $20
+    i32.store $0
+    local.get $20
+    local.get $to
+    local.set $20
+    global.get $~lib/memory/__stack_pointer
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#get
-    local.tee $12
-    i32.store $0 offset=28
-    local.get $12
+    local.tee $14
+    i32.store $0 offset=36
+    local.get $14
     if (result i32)
-     local.get $12
+     local.get $14
     else
      unreachable
     end
     local.tee $tokensOf
-    i32.store $0 offset=32
+    i32.store $0 offset=40
     local.get $tokensOf
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
-    call $assembly/proto/collections/collections.tokens_of_result#get:token_id
-    local.set $18
-    global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
-    local.get $tokenId
-    local.set $18
-    global.get $~lib/memory/__stack_pointer
-    local.get $18
+    local.get $20
     i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    call $assembly/proto/collections/collections.tokens_of_result#get:token_id
+    local.set $20
+    global.get $~lib/memory/__stack_pointer
+    local.get $20
+    i32.store $0
+    local.get $20
+    local.get $tokenId
+    local.set $20
+    global.get $~lib/memory/__stack_pointer
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     call $~lib/array/Array<~lib/string/String>#push
     drop
     local.get $this
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=24
-    local.get $18
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
-    local.set $18
+    local.get $20
+    i32.store $0 offset=32
+    local.get $20
+    call $assembly/Collections/Collections#get:_tokensOf
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
+    local.get $20
+    i32.store $0
+    local.get $20
     local.get $to
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     local.get $tokensOf
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
+    local.get $20
+    i32.store $0 offset=8
+    local.get $20
     call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.tokens_of_result>#put
     global.get $~lib/memory/__stack_pointer
     i32.const 0
     local.get $to
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     local.get $tokenId
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
+    local.get $20
+    i32.store $0 offset=8
+    local.get $20
     call $~lib/@koinos/sdk-as/assembly/util/stringBytes/StringBytes.stringToBytes
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
+    local.get $20
+    i32.store $0 offset=8
+    local.get $20
     call $assembly/proto/collections/collections.mint_event#constructor
     local.tee $mintEvent
-    i32.store $0 offset=36
+    i32.store $0 offset=44
     global.get $~lib/memory/__stack_pointer
     global.get $~lib/memory/__stack_pointer
     i32.const 1
@@ -33475,50 +31689,50 @@
     i32.const 87
     i32.const 0
     call $~lib/rt/__newArray
-    local.tee $15
-    i32.store $0 offset=40
+    local.tee $17
+    i32.store $0 offset=48
     global.get $~lib/memory/__stack_pointer
-    local.get $15
+    local.get $17
     i32.load $0 offset=4
-    local.tee $16
-    i32.store $0 offset=44
-    local.get $15
+    local.tee $18
+    i32.store $0 offset=52
+    local.get $17
     i32.const 0
     local.get $to
     call $~lib/array/Array<~lib/typedarray/Uint8Array>#__set
-    local.get $15
+    local.get $17
     local.tee $impacted
-    i32.store $0 offset=48
+    i32.store $0 offset=56
     i32.const 5504
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=4
-    local.get $18
+    local.get $20
+    i32.store $0
+    local.get $20
     local.get $mintEvent
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=24
-    local.get $18
+    local.get $20
+    i32.store $0 offset=32
+    local.get $20
     i32.const 5568
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=52
-    local.get $18
+    local.get $20
+    i32.store $0 offset=60
+    local.get $20
     call $~lib/as-proto/assembly/Protobuf/Protobuf.encode<assembly/proto/collections/collections.mint_event>
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=8
-    local.get $18
+    local.get $20
+    i32.store $0 offset=4
+    local.get $20
     local.get $impacted
-    local.set $18
+    local.set $20
     global.get $~lib/memory/__stack_pointer
-    local.get $18
-    i32.store $0 offset=12
-    local.get $18
+    local.get $20
+    i32.store $0 offset=8
+    local.get $20
     call $~lib/@koinos/sdk-as/assembly/systemCalls/System.event
     local.get $index
     i64.const 1
@@ -33531,18 +31745,18 @@
   local.get $balance
   call $assembly/proto/collections/collections.balance_object#get:value
   local.get $args
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   call $assembly/proto/collections/collections.mint_arguments#get:number_tokens_to_mint
   i32.const 224
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
+  local.get $20
+  i32.store $0 offset=8
+  local.get $20
   call $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.add<u64>
   call $assembly/proto/collections/collections.balance_object#set:value
   local.get $balance
@@ -33550,11 +31764,11 @@
   global.get $assembly/Constants/Constants.MAX_SUPPLY
   i64.le_u
   i32.const 5600
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   i32.const 1
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.require<bool>
   drop
@@ -33562,62 +31776,62 @@
   local.get $supply
   call $assembly/proto/collections/collections.balance_object#get:value
   local.get $args
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   call $assembly/proto/collections/collections.mint_arguments#get:number_tokens_to_mint
   i32.const 224
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
+  local.get $20
+  i32.store $0 offset=8
+  local.get $20
   call $~lib/@koinos/sdk-as/assembly/util/safeMath/SafeMath.add<u64>
   call $assembly/proto/collections/collections.balance_object#set:value
   local.get $this
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=12
-  local.get $18
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
-  local.set $18
-  global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=4
-  local.get $18
-  local.get $to
-  local.set $18
-  global.get $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   i32.store $0 offset=8
-  local.get $18
+  local.get $20
+  call $assembly/Collections/Collections#get:_balances
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0
+  local.get $20
+  local.get $to
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0 offset=4
+  local.get $20
   local.get $balance
   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Map<~lib/typedarray/Uint8Array,assembly/proto/collections/collections.balance_object>#put
   local.get $this
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  local.get $18
-  i32.store $0 offset=8
-  local.get $18
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_supply
-  local.set $18
-  global.get $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   i32.store $0 offset=4
-  local.get $18
+  local.get $20
+  call $assembly/Collections/Collections#get:_supply
+  local.set $20
+  global.get $~lib/memory/__stack_pointer
+  local.get $20
+  i32.store $0
+  local.get $20
   local.get $supply
   call $~lib/@koinos/sdk-as/assembly/util/storage/Storage.Obj<assembly/proto/collections/collections.balance_object>#put
   i32.const 0
   call $assembly/proto/collections/collections.empty_object#constructor
-  local.set $18
+  local.set $20
   global.get $~lib/memory/__stack_pointer
-  i32.const 56
+  i32.const 64
   i32.add
   global.set $~lib/memory/__stack_pointer
-  local.get $18
+  local.get $20
   return
  )
  (func $assembly/proto/collections/collections.burn_arguments#constructor (param $this i32) (param $from i32) (param $token_id i32) (result i32)
@@ -33701,14 +31915,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $2of2
    block $1of2
     block $0of2
@@ -34099,17 +32308,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   block $3of3
    block $2of3
     block $1of3
@@ -34453,14 +32654,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   local.get $first
   i32.const 0
   i32.eq
@@ -35054,14 +33250,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $length
   i32.const 0
   i32.lt_s
@@ -35231,14 +33422,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   i32.const 0
   call $~lib/@koinos/proto-as/assembly/koinos/chain/system_calls/system_calls.get_caller_arguments#constructor
   local.set $args
@@ -35642,14 +33828,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   i32.const 0
   i32.const 0
@@ -35842,17 +34023,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $a
   local.get $b
@@ -36191,7 +34364,7 @@
   local.get $deleteCount
   i32.const 2
   i32.shl
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $start
   local.get $deleteCount
   i32.add
@@ -36211,7 +34384,7 @@
    i32.sub
    i32.const 2
    i32.shl
-   call $~lib/memory/memory.copy
+   memory.copy $0 $0
   end
   local.get $this
   local.set $17
@@ -36564,7 +34737,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#transfer (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#transfer (param $this i32) (param $args i32) (result i32)
   (local $from i32)
   (local $to i32)
   (local $token_id i32)
@@ -36598,44 +34771,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=48
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=56
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=64
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=72
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=80
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=88
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=96
+  i32.const 100
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $28
@@ -36679,7 +34817,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens
+  call $assembly/Collections/Collections#get:_tokens
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -36777,7 +34915,7 @@
    local.get $28
    i32.store $0 offset=20
    local.get $28
-   call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_approvals
+   call $assembly/Collections/Collections#get:_approvals
    local.set $28
    global.get $~lib/memory/__stack_pointer
    local.get $28
@@ -36834,7 +34972,7 @@
     local.get $28
     i32.store $0 offset=20
     local.get $28
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_operators
+    call $assembly/Collections/Collections#get:_operators
     local.set $28
     global.get $~lib/memory/__stack_pointer
     local.get $28
@@ -36845,6 +34983,18 @@
     global.get $~lib/memory/__stack_pointer
     local.get $28
     i32.store $0 offset=20
+    local.get $28
+    local.get $caller
+    local.set $28
+    global.get $~lib/memory/__stack_pointer
+    local.get $28
+    i32.store $0 offset=52
+    local.get $28
+    call $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.caller_data#get:caller
+    local.set $28
+    global.get $~lib/memory/__stack_pointer
+    local.get $28
+    i32.store $0 offset=28
     local.get $28
     global.get $~lib/memory/__stack_pointer
     local.get $token
@@ -36865,21 +35015,9 @@
     local.set $28
     global.get $~lib/memory/__stack_pointer
     local.get $28
-    i32.store $0 offset=28
-    local.get $28
-    local.get $caller
-    local.set $28
-    global.get $~lib/memory/__stack_pointer
-    local.get $28
-    i32.store $0 offset=52
-    local.get $28
-    call $~lib/@koinos/proto-as/assembly/koinos/chain/chain/chain.caller_data#get:caller
-    local.set $28
-    global.get $~lib/memory/__stack_pointer
-    local.get $28
     i32.store $0 offset=48
     local.get $28
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#_get_approved_operator_key
+    call $assembly/Collections/Collections#_get_approved_operator_key
     local.set $28
     global.get $~lib/memory/__stack_pointer
     local.get $28
@@ -36925,7 +35063,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_approvals
+  call $assembly/Collections/Collections#get:_approvals
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -36966,7 +35104,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
+  call $assembly/Collections/Collections#get:_balances
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37004,7 +35142,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
+  call $assembly/Collections/Collections#get:_balances
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37044,7 +35182,7 @@
   local.get $28
   i32.store $0 offset=28
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
+  call $assembly/Collections/Collections#get:_tokensOf
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37081,7 +35219,7 @@
   local.get $28
   i32.store $0 offset=28
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
+  call $assembly/Collections/Collections#get:_tokensOf
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37167,7 +35305,7 @@
   local.get $28
   i32.store $0 offset=28
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
+  call $assembly/Collections/Collections#get:_tokensOf
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37199,7 +35337,7 @@
   local.get $28
   i32.store $0 offset=28
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf
+  call $assembly/Collections/Collections#get:_tokensOf
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37231,7 +35369,7 @@
   local.get $28
   i32.store $0 offset=28
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens
+  call $assembly/Collections/Collections#get:_tokens
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37265,7 +35403,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
+  call $assembly/Collections/Collections#get:_balances
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37285,7 +35423,7 @@
   local.get $28
   i32.store $0 offset=20
   local.get $28
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances
+  call $assembly/Collections/Collections#get:_balances
   local.set $28
   global.get $~lib/memory/__stack_pointer
   local.get $28
@@ -37496,17 +35634,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=24
+  i32.const 28
+  memory.fill $0
   block $3of3
    block $2of3
     block $1of3
@@ -37986,14 +36116,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $this
   local.set $3
   global.get $~lib/memory/__stack_pointer
@@ -38368,7 +36493,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#approve (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#approve (param $this i32) (param $args i32) (result i32)
   (local $approver_address i32)
   (local $to i32)
   (local $token_id i32)
@@ -38390,32 +36515,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=48
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=56
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=64
+  i32.const 0
+  i32.const 72
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $16
@@ -38467,7 +36569,7 @@
   local.get $16
   i32.store $0 offset=20
   local.get $16
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens
+  call $assembly/Collections/Collections#get:_tokens
   local.set $16
   global.get $~lib/memory/__stack_pointer
   local.get $16
@@ -38568,7 +36670,7 @@
    local.get $16
    i32.store $0 offset=20
    local.get $16
-   call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_operators
+   call $assembly/Collections/Collections#get:_operators
    local.set $16
    global.get $~lib/memory/__stack_pointer
    local.get $16
@@ -38579,6 +36681,12 @@
    global.get $~lib/memory/__stack_pointer
    local.get $16
    i32.store $0 offset=20
+   local.get $16
+   local.get $approver_address
+   local.set $16
+   global.get $~lib/memory/__stack_pointer
+   local.get $16
+   i32.store $0 offset=28
    local.get $16
    global.get $~lib/memory/__stack_pointer
    local.get $token
@@ -38599,15 +36707,9 @@
    local.set $16
    global.get $~lib/memory/__stack_pointer
    local.get $16
-   i32.store $0 offset=28
-   local.get $16
-   local.get $approver_address
-   local.set $16
-   global.get $~lib/memory/__stack_pointer
-   local.get $16
    i32.store $0 offset=40
    local.get $16
-   call $assembly/Kanvasgodscontract/Kanvasgodscontract#_get_approved_operator_key
+   call $assembly/Collections/Collections#_get_approved_operator_key
    local.set $16
    global.get $~lib/memory/__stack_pointer
    local.get $16
@@ -38662,7 +36764,7 @@
   local.get $16
   i32.store $0 offset=28
   local.get $16
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_approvals
+  call $assembly/Collections/Collections#get:_approvals
   local.set $16
   global.get $~lib/memory/__stack_pointer
   local.get $16
@@ -38873,14 +36975,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $3of3
    block $2of3
     block $1of3
@@ -39688,7 +37785,7 @@
   local.get $2
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#set_approval_for_all (param $this i32) (param $args i32) (result i32)
+ (func $assembly/Collections/Collections#set_approval_for_all (param $this i32) (param $args i32) (result i32)
   (local $approver_address i32)
   (local $operator_address i32)
   (local $approved i32)
@@ -39704,23 +37801,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=40
+  i32.const 44
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $args
   local.set $10
@@ -39790,7 +37873,7 @@
   local.get $10
   i32.store $0 offset=16
   local.get $10
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_operators
+  call $assembly/Collections/Collections#get:_operators
   local.set $10
   global.get $~lib/memory/__stack_pointer
   local.get $10
@@ -39814,7 +37897,7 @@
   local.get $10
   i32.store $0 offset=24
   local.get $10
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#_get_approved_operator_key
+  call $assembly/Collections/Collections#_get_approved_operator_key
   local.set $10
   global.get $~lib/memory/__stack_pointer
   local.get $10
@@ -39954,44 +38037,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=48
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=56
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=64
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=72
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=80
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=88
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=96
+  i32.const 0
+  i32.const 104
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   call $~lib/@koinos/sdk-as/assembly/systemCalls/System.getArguments
   local.tee $contractArgs
@@ -40004,7 +38052,7 @@
   i32.store $0 offset=4
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  call $assembly/Kanvasgodscontract/Kanvasgodscontract#constructor
+  call $assembly/Collections/Collections#constructor
   local.tee $c
   i32.store $0 offset=8
   block $break|0
@@ -40140,7 +38188,7 @@
                      i32.store $0 offset=12
                      local.get $40
                      local.get $args
-                     call $assembly/Kanvasgodscontract/Kanvasgodscontract#name
+                     call $assembly/Collections/Collections#name
                      local.tee $res
                      i32.store $0 offset=24
                      global.get $~lib/memory/__stack_pointer
@@ -40192,7 +38240,7 @@
                     i32.store $0 offset=12
                     local.get $40
                     local.get $args|6
-                    call $assembly/Kanvasgodscontract/Kanvasgodscontract#uri
+                    call $assembly/Collections/Collections#uri
                     local.tee $res|7
                     i32.store $0 offset=28
                     global.get $~lib/memory/__stack_pointer
@@ -40244,7 +38292,7 @@
                    i32.store $0 offset=12
                    local.get $40
                    local.get $args|8
-                   call $assembly/Kanvasgodscontract/Kanvasgodscontract#symbol
+                   call $assembly/Collections/Collections#symbol
                    local.tee $res|9
                    i32.store $0 offset=32
                    global.get $~lib/memory/__stack_pointer
@@ -40303,7 +38351,7 @@
                   local.get $40
                   i32.store $0 offset=16
                   local.get $40
-                  call $assembly/Kanvasgodscontract/Kanvasgodscontract#get_approved
+                  call $assembly/Collections/Collections#get_approved
                   local.tee $res|11
                   i32.store $0 offset=40
                   global.get $~lib/memory/__stack_pointer
@@ -40361,7 +38409,7 @@
                  local.get $40
                  i32.store $0 offset=16
                  local.get $40
-                 call $assembly/Kanvasgodscontract/Kanvasgodscontract#is_approved_for_all
+                 call $assembly/Collections/Collections#is_approved_for_all
                  local.set $res|13
                  global.get $~lib/memory/__stack_pointer
                  local.get $res|13
@@ -40406,7 +38454,7 @@
                 i32.store $0 offset=12
                 local.get $40
                 local.get $args|14
-                call $assembly/Kanvasgodscontract/Kanvasgodscontract#total_supply
+                call $assembly/Collections/Collections#total_supply
                 local.set $res|15
                 global.get $~lib/memory/__stack_pointer
                 local.get $res|15
@@ -40452,7 +38500,7 @@
                i32.store $0 offset=12
                local.get $40
                local.get $args|16
-               call $assembly/Kanvasgodscontract/Kanvasgodscontract#royalties
+               call $assembly/Collections/Collections#royalties
                local.tee $res|17
                i32.store $0 offset=48
                global.get $~lib/memory/__stack_pointer
@@ -40510,7 +38558,7 @@
               local.get $40
               i32.store $0 offset=16
               local.get $40
-              call $assembly/Kanvasgodscontract/Kanvasgodscontract#set_royalties
+              call $assembly/Collections/Collections#set_royalties
               local.set $res|19
               global.get $~lib/memory/__stack_pointer
               local.get $res|19
@@ -40556,7 +38604,7 @@
              i32.store $0 offset=12
              local.get $40
              local.get $args|20
-             call $assembly/Kanvasgodscontract/Kanvasgodscontract#owner
+             call $assembly/Collections/Collections#owner
              local.tee $res|21
              i32.store $0 offset=56
              global.get $~lib/memory/__stack_pointer
@@ -40614,7 +38662,7 @@
             local.get $40
             i32.store $0 offset=16
             local.get $40
-            call $assembly/Kanvasgodscontract/Kanvasgodscontract#transfer_ownership
+            call $assembly/Collections/Collections#transfer_ownership
             local.set $res|23
             global.get $~lib/memory/__stack_pointer
             local.get $res|23
@@ -40666,7 +38714,7 @@
            local.get $40
            i32.store $0 offset=16
            local.get $40
-           call $assembly/Kanvasgodscontract/Kanvasgodscontract#balance_of
+           call $assembly/Collections/Collections#balance_of
            local.set $res|25
            global.get $~lib/memory/__stack_pointer
            local.get $res|25
@@ -40719,7 +38767,7 @@
           local.get $40
           i32.store $0 offset=16
           local.get $40
-          call $assembly/Kanvasgodscontract/Kanvasgodscontract#tokens_of
+          call $assembly/Collections/Collections#tokens_of
           local.tee $res|27
           i32.store $0 offset=72
           global.get $~lib/memory/__stack_pointer
@@ -40778,7 +38826,7 @@
          local.get $40
          i32.store $0 offset=16
          local.get $40
-         call $assembly/Kanvasgodscontract/Kanvasgodscontract#owner_of
+         call $assembly/Collections/Collections#owner_of
          local.tee $res|29
          i32.store $0 offset=80
          global.get $~lib/memory/__stack_pointer
@@ -40836,7 +38884,7 @@
         local.get $40
         i32.store $0 offset=16
         local.get $40
-        call $assembly/Kanvasgodscontract/Kanvasgodscontract#mint
+        call $assembly/Collections/Collections#mint
         local.set $res|31
         global.get $~lib/memory/__stack_pointer
         local.get $res|31
@@ -40888,7 +38936,7 @@
        local.get $40
        i32.store $0 offset=16
        local.get $40
-       call $assembly/Kanvasgodscontract/Kanvasgodscontract#burn
+       call $assembly/Collections/Collections#burn
        local.set $res|33
        global.get $~lib/memory/__stack_pointer
        local.get $res|33
@@ -40940,7 +38988,7 @@
       local.get $40
       i32.store $0 offset=16
       local.get $40
-      call $assembly/Kanvasgodscontract/Kanvasgodscontract#transfer
+      call $assembly/Collections/Collections#transfer
       local.set $res|35
       global.get $~lib/memory/__stack_pointer
       local.get $res|35
@@ -40992,7 +39040,7 @@
      local.get $40
      i32.store $0 offset=16
      local.get $40
-     call $assembly/Kanvasgodscontract/Kanvasgodscontract#approve
+     call $assembly/Collections/Collections#approve
      local.set $res|37
      global.get $~lib/memory/__stack_pointer
      local.get $res|37
@@ -41044,7 +39092,7 @@
     local.get $40
     i32.store $0 offset=16
     local.get $40
-    call $assembly/Kanvasgodscontract/Kanvasgodscontract#set_approval_for_all
+    call $assembly/Collections/Collections#set_approval_for_all
     local.set $res|39
     global.get $~lib/memory/__stack_pointer
     local.get $res|39
@@ -41121,23 +39169,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
+  i32.const 0
+  i32.const 48
+  memory.fill $0
   block $~lib/as-proto/assembly/internal/FixedReader/FixedReader#inc|inlined.0 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $this
@@ -41887,14 +39921,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   block $~lib/as-proto/assembly/internal/FixedReader/FixedReader#uint32|inlined.0 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $this
@@ -41977,7 +40006,7 @@
    br $~lib/as-proto/assembly/internal/FixedReader/FixedReader#inc|inlined.10
   end
   local.get $length
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $buffer
   local.set $7
   global.get $~lib/memory/__stack_pointer
@@ -42498,14 +40527,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.store $0 offset=16
+  i32.const 20
+  memory.fill $0
   local.get $value
   i32.const 0
   i32.lt_s
@@ -42835,14 +40859,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   global.get $~lib/memory/__stack_pointer
   local.get $this
   local.tee $this|3
@@ -43307,7 +41326,7 @@
   i32.store $0 offset=4
   local.get $8
   call $~lib/arraybuffer/ArrayBufferView#get:byteLength
-  call $~lib/memory/memory.copy
+  memory.copy $0 $0
   local.get $this
   local.set $8
   global.get $~lib/memory/__stack_pointer
@@ -43465,14 +41484,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
+  i32.const 0
+  i32.const 24
+  memory.fill $0
   block $~lib/as-proto/assembly/internal/FixedWriter/FixedWriter#varlen|inlined.1 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $this
@@ -44213,23 +42227,9 @@
   global.set $~lib/memory/__stack_pointer
   call $~stack_check
   global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=8
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=16
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=24
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=32
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store $0 offset=40
+  i32.const 0
+  i32.const 48
+  memory.fill $0
   block $~lib/as-proto/assembly/internal/FixedReader/FixedReader#inc|inlined.13 (result i32)
    global.get $~lib/memory/__stack_pointer
    local.get $this
@@ -47359,7 +45359,7 @@
   local.get $12
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_approvals (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_approvals (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47388,7 +45388,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_operators (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_operators (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47417,7 +45417,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_supply (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_supply (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47446,7 +45446,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_config (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_config (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47657,7 +45657,7 @@
   local.get $17
   return
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_balances (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_balances (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47686,7 +45686,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokensOf (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_tokensOf (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer
@@ -47715,7 +45715,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $2
  )
- (func $assembly/Kanvasgodscontract/Kanvasgodscontract#get:_tokens (param $this i32) (result i32)
+ (func $assembly/Collections/Collections#get:_tokens (param $this i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   global.get $~lib/memory/__stack_pointer

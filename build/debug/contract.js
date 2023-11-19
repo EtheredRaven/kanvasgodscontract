@@ -14,7 +14,6 @@ async function instantiate(module, imports = {}) {
     }),
   };
   const { exports } = await WebAssembly.instantiate(module, adaptedImports);
-  exports._start();
   return exports;
 }
 export const {

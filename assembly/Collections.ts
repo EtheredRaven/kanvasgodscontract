@@ -22,7 +22,7 @@ const TOKEN_OF_SPACE_ID = 22;
 const SUPPLY_SPACE_ID = 23;
 const CONFIG_SPACE_ID = 24;
 
-export class Kanvasgodscontract {
+export class Collections {
   _contractId: Uint8Array;
   _supply!: Storage.Obj<collections.balance_object>;
   _tokens!: Storage.Map<string, collections.token_object>;

@@ -11,6 +11,7 @@
     "@koinos/as-proto-gen": "^1.0.3",
     "@koinos/mock-vm": "^1.0.0",
     "@koinos/sdk-as": "^1.1.0",
+    "@koinos/sdk-as-cli": "1.0.2",
     "@roamin/local-koinos": "^0.4.9",
     "@roamin/protoc": "^2.4.0",
     "@types/jest": "^29.4.0",
@@ -26,8 +27,8 @@
   },
   "scripts": {
     "lint": "eslint --max-warnings 0 --ext ts \"*/assembly/**/*.ts\"",
-    "build:debug": "koinos-sdk-as-cli build-all debug 0 kanvasgodscontract.proto",
-    "build:release": "koinos-sdk-as-cli build-all release 0 kanvasgodscontract.proto",
+    "build:debug": "koinos-sdk-as-cli build-all debug 0 collections.proto",
+    "build:release": "koinos-sdk-as-cli build-all release 0 collections.proto",
     "test": "koinos-sdk-as-cli run-tests",
     "ci": "jest -i",
     "ci:devcontainer": "ENV=DEVCONTAINER jest -i"
